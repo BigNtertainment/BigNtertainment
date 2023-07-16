@@ -1,5 +1,5 @@
 const Header = () => {
-	return <div>Header</div>;
+	return <div className="col-[full-start/full-end]">Header</div>;
 };
 
 export default Header;

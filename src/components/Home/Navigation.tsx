@@ -1,5 +1,5 @@
 const Navigation = () => {
-	return <div>Navigation</div>;
+	return <div className=" col-[full-start/full-end]">Navigation</div>;
 };
 
 export default Navigation;
