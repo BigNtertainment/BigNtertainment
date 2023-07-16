@@ -29,6 +29,6 @@ html {
 
 @layer components {
 	.main-page-layout {
-		@apply grid grid-rows-[7rem_80vh_minmax(16rem,1fr)_repeat(3,min-content)_30vh_min-content] grid-cols-[minmax(6rem,1fr)_[center-start]_repeat(8,[col-start]_minmax(min-content,14rem)_[col-end])_[center-end]_minmax(6rem,1fr)_[full-end]];
+		@apply grid grid-rows-[7rem_80vh_repeat(5,min-content)_30vh_min-content] grid-cols-[minmax(6rem,1fr)_[center-start]_repeat(8,[col-start]_minmax(min-content,14rem)_[col-end])_[center-end]_minmax(6rem,1fr)_[full-end]];
 	}
 }
