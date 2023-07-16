@@ -23,7 +23,7 @@ html {
 		font-weight: 300;
 		font-size: 1.6rem;
 		line-height: 1.6;
-		@apply text-[#222222];
+		@apply text-white bg-dark-primary;
 	}
 }
 
