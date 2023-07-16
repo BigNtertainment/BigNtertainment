@@ -1,13 +1,32 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import useDarkMode from "@/hooks/useDarkMode";
 import Image from "next/image";
 
-type Props = {
-	alt: string;
-};
+const Logo = (props: any) => {
+	const [enabled, setEnabled] = useDarkMode();
+	const [src, setSrc] = useState<string | undefined>(undefined);
 
-const Logo = ({ alt, ...props }: Props) => {
-	const src = "";
+	useEffect(() => {
+		const imageSrc = `/logo-${enabled ? "dark" : "light"}.svg`;
 
-	return <Image src={src} alt={alt} {...props} />;
+		if (process.browser) {
+			setSrc(imageSrc);
+		} else {
+			// Set the source to undefined during SSR
+			setSrc(undefined);
+		}
+	}, [enabled]);
+
+	if (!src) {
+		// Return a placeholder or loading state during SSR
+		return <div>Loading...</div>;
+	}
+
+	return (
+		<Image loading="lazy" src={src} alt="BigNtertainment logo" {...props} />
+	);
 };
 
 export default Logo;
