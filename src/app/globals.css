@@ -61,10 +61,19 @@ html {
 	.react-slideshow-container + ul.indicators > li {
 		z-index: 10;
 	}
+
+	div[aria-roledescription] {
+		@apply h-full rounded-t-3xl;
+	}
+
+	div[aria-roledescription] div {
+		height: 100% !important;
+		@apply overflow-hidden;
+	}
 }
 
 @layer components {
 	.main-page-layout {
-		@apply pt-1 grid grid-rows-[70vh_repeat(5,min-content)_30vh] grid-cols-[[full-start]_minmax(6rem,1fr)_[center-start]_repeat(8,[col-start]_minmax(min-content,14rem)_[col-end])_[center-end]_minmax(6rem,1fr)_[full-end]];
+		@apply pt-2.5  px-4 grid grid-rows-[70vh_repeat(5,min-content)_30vh] grid-cols-[[full-start]_minmax(6rem,1fr)_[center-start]_repeat(8,[col-start]_minmax(min-content,14rem)_[col-end])_[center-end]_minmax(6rem,1fr)_[full-end]];
 	}
 }

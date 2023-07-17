@@ -14,7 +14,7 @@ const divStyle = {
 	alignItems: "center",
 	justifyContent: "center",
 	backgroundSize: "cover",
-	height: "70vh",
+	height: "100%",
 };
 const slideImages = [
 	{
@@ -33,7 +33,7 @@ const slideImages = [
 
 const Slideshow = () => {
 	return (
-		<div className="slide-container h-full">
+		<div className="slide-container h-full rounded-t-3xl ">
 			<Slide
 				arrows={false}
 				duration={10000}
@@ -41,9 +41,9 @@ const Slideshow = () => {
 				pauseOnHover={true}
 				indicators={true}>
 				{slideImages.map((slideImage, index) => (
-					<div key={index} className="h-full">
+					<div key={index} className="h-full ">
 						<div
-							className="h-full rounded-3xl mx-3 mr-5 my-2"
+							className="h-full "
 							style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}>
 							<span style={spanStyle}>{slideImage.caption}</span>
 						</div>
