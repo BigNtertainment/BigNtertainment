@@ -4,7 +4,7 @@ import Header from "@/components/Home/Header/Header";
 import Blog from "@/components/Home/Blog/Blog";
 import Reviews from "@/components/Home/Reviews";
 import Newsletter from "@/components/Home/Newsletter";
-import Partners from "@/components/Home/Partners";
+import Partners from "@/components/Home/Partners/Partners";
 
 export default function Home() {
 	return (
@@ -13,8 +13,8 @@ export default function Home() {
 			<Announcement />
 			<Games />
 			<Blog />
-			<Partners />
 			<Reviews />
+			<Partners />
 			<Newsletter />
 		</main>
 	);
