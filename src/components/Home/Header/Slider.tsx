@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useRef } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
@@ -15,7 +14,7 @@ const divStyle = {
 	alignItems: "center",
 	justifyContent: "center",
 	backgroundSize: "cover",
-	height: "60vh",
+	height: "70vh",
 };
 const slideImages = [
 	{
@@ -32,15 +31,7 @@ const slideImages = [
 	},
 ];
 
-const indicatorsClass = {
-	indicators: {
-		background: "red",
-	},
-};
-
 const Slideshow = () => {
-	const sliderRef = useRef<any>(null);
-
 	return (
 		<div className="slide-container h-full">
 			<Slide
@@ -52,7 +43,7 @@ const Slideshow = () => {
 				{slideImages.map((slideImage, index) => (
 					<div key={index} className="h-full">
 						<div
-							className="h-full"
+							className="h-full rounded-3xl mx-3 mr-5 my-2"
 							style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}>
 							<span style={spanStyle}>{slideImage.caption}</span>
 						</div>
