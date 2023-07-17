@@ -2,7 +2,7 @@ import Announcement from "@/components/Home/Announcement";
 import Games from "@/components/Home/Games/Games";
 import Header from "@/components/Home/Header/Header";
 import Blog from "@/components/Home/Blog/Blog";
-import Reviews from "@/components/Home/Reviews";
+import Reviews from "@/components/Home/Rewiews/Reviews";
 import Newsletter from "@/components/Home/Newsletter";
 import Partners from "@/components/Home/Partners/Partners";
 
