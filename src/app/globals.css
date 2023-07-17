@@ -25,10 +25,36 @@ html {
 		line-height: 1.6;
 		@apply text-white bg-dark-primary;
 	}
+
+	.react-slideshow-container + ul.indicators {
+		margin-top: -15px !important;
+		z-index: 10 !important;
+		position: relative;
+		gap: 10px;
+	}
+
+	.react-slideshow-container + ul.indicators::after {
+		content: "";
+		display: block;
+		width: 110px;
+		height: 25px;
+		position: absolute;
+		top: -10px;
+		@apply bg-dark-primary z-0 rounded-t-full;
+	}
+
+	.react-slideshow-container + ul.indicators > li > button::before {
+		background-color: #eee !important;
+		width: 10px !important;
+		height: 10px !important;
+	}
+	.react-slideshow-container + ul.indicators > li {
+		z-index: 10;
+	}
 }
 
 @layer components {
 	.main-page-layout {
-		@apply grid mt-[6.5rem] grid-rows-[55vh_repeat(5,min-content)_30vh] grid-cols-[[full-start]_minmax(6rem,1fr)_[center-start]_repeat(8,[col-start]_minmax(min-content,14rem)_[col-end])_[center-end]_minmax(6rem,1fr)_[full-end]];
+		@apply grid mt-[6.5rem] grid-rows-[60vh_repeat(5,min-content)_30vh] grid-cols-[[full-start]_minmax(6rem,1fr)_[center-start]_repeat(8,[col-start]_minmax(min-content,14rem)_[col-end])_[center-end]_minmax(6rem,1fr)_[full-end]];
 	}
 }
