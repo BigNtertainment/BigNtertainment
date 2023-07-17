@@ -63,7 +63,7 @@ html {
 	}
 
 	div[aria-roledescription] {
-		@apply h-full rounded-t-3xl;
+		@apply h-full rounded-3xl;
 	}
 
 	div[aria-roledescription] div {

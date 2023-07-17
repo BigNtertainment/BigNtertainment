@@ -10,6 +10,9 @@ const Navigation = () => {
 				<div className="relative h-full aspect-square">
 					<Logo fill={true} />
 				</div>
+				<div className="flex items-center translate-y-0.5 -translate-x-3 text-3xl">
+					BigNtertainment
+				</div>
 				<NavLinks />
 			</div>
 			<div className="flex gap-10">
