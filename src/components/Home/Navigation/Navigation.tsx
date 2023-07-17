@@ -1,4 +1,5 @@
 import Logo from "../../util/Logo";
+import NavAuth from "./NavAuth";
 import NavLinks from "./NavLinks";
 
 const Navigation = () => {
@@ -10,7 +11,9 @@ const Navigation = () => {
 				</div>
 				<NavLinks />
 			</div>
-			<div>XD</div>
+			<div>
+				<NavAuth />
+			</div>
 		</nav>
 	);
 };
