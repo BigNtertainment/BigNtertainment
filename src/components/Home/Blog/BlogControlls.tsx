@@ -1,13 +1,35 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import BlogOption from "./BlogOption";
 
-const BlogControlls = () => {
+type Props = {
+	selectedOption: string;
+	setSelectedOption: (option: string) => void;
+};
+
+const DUMMY_DATA = ["Latest", "Golf Control", "Fifa 23"];
+
+const BlogControlls = ({ selectedOption, setSelectedOption }: Props) => {
+	useEffect(() => {
+		if (selectedOption === "") {
+			setSelectedOption(DUMMY_DATA[0]);
+		}
+	}, []);
+
 	return (
 		<div className="border-b-2">
 			<ul className="flex justify-center">
-				<BlogOption>Latest</BlogOption>
-				<BlogOption>Golf Control</BlogOption>
-				<BlogOption>Fifa 23</BlogOption>
+				{DUMMY_DATA.map((game) => {
+					return (
+						<BlogOption
+							key={game}
+							isActive={selectedOption === game}
+							onClick={() => setSelectedOption(game)}>
+							{game}
+						</BlogOption>
+					);
+				})}
 			</ul>
 		</div>
 	);
