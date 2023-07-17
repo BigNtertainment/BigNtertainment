@@ -11,18 +11,21 @@ const Partners = () => {
 					height={50}
 					src={"/dzajlopment.svg"}
 					alt="partner - dzajlopment"
+					className="opacity-30"
 				/>
 				<Image
 					width={50}
 					height={50}
 					src={"/dzajlopment.svg"}
 					alt="partner - dzajlopment"
+					className="opacity-30"
 				/>
 				<Image
 					width={50}
 					height={50}
 					src={"/dzajlopment.svg"}
 					alt="partner - dzajlopment"
+					className="opacity-30"
 				/>
 			</div>
 		</div>

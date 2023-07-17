@@ -5,7 +5,7 @@ import NavTheme from "./NavTheme";
 
 const Navigation = () => {
 	return (
-		<nav className="col-[full-start/full-end] sticky top-2.5 h-[7rem] py-4 pb-7 w-[calc(100%-2.5rem)]  flex justify-between mx-[1.3rem] px-2 pr-4  z-50 rounded-b-3xl ">
+		<nav className="col-[full-start/full-end] bg-dark-primary sticky top-0 pt-8 h-[8rem] py-8 pb-7 w-[calc(100%-2rem)]  flex justify-between mx-[1rem] px-2 pr-4  z-50 ">
 			<div className="h-full flex gap-6">
 				<div className="relative h-full aspect-square">
 					<Logo fill={true} />

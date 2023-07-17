@@ -3,7 +3,7 @@ import Logo from "../util/Logo";
 
 const Footer = () => {
 	return (
-		<div className="grid grid-cols-[minmax(6rem,1fr)_repeat(8,minmax(min-content,14rem))_minmax(6rem,1fr)_] pb-28">
+		<div className="grid grid-cols-[minmax(6rem,1fr)_repeat(8,minmax(min-content,14rem))_minmax(6rem,1fr)_] mt-10 pb-28">
 			<div className="col-[2/-2] flex justify-center mt-16 mb-32">
 				<Logo width={100} height={100} />
 			</div>
