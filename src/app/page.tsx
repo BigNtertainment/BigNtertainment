@@ -1,6 +1,6 @@
 import Announcement from "@/components/Home/Announcement";
 import Games from "@/components/Home/Games";
-import Header from "@/components/Home/Header";
+import Header from "@/components/Home/Header/Header";
 import Navigation from "@/components/Home/Navigation/Navigation";
 import Blog from "@/components/Home/Blog";
 import Reviews from "@/components/Home/Reviews";
