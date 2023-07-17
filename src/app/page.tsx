@@ -1,7 +1,7 @@
 import Announcement from "@/components/Home/Announcement";
 import Games from "@/components/Home/Games/Games";
 import Header from "@/components/Home/Header/Header";
-import Blog from "@/components/Home/Blog";
+import Blog from "@/components/Home/Blog/Blog";
 import Reviews from "@/components/Home/Reviews";
 import Newsletter from "@/components/Home/Newsletter";
 import Partners from "@/components/Home/Partners";
@@ -13,8 +13,8 @@ export default function Home() {
 			<Announcement />
 			<Games />
 			<Blog />
-			<Reviews />
 			<Partners />
+			<Reviews />
 			<Newsletter />
 		</main>
 	);

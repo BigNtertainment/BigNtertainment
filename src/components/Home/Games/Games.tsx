@@ -6,7 +6,7 @@ const Games = () => {
 		<div className="col-[center-start/center-end] my-36 grid">
 			<h3 className="text-6xl font-bold text-center mb-32">Our Games</h3>
 			<GamesList />
-			<button className="mt-16 mx-auto">See more games</button>
+			<button className="mt-16 mx-auto">See more</button>
 		</div>
 	);
 };

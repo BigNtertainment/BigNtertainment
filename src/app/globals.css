@@ -50,7 +50,8 @@ html {
 		width: 110px;
 		height: 25px;
 		top: -10px;
-		@apply bg-dark-primary z-0 rounded-t-full absolute block;
+
+		@apply bg-dark-primary z-0 rounded-t-3xl absolute block;
 	}
 
 	.react-slideshow-container + ul.indicators > li > button::before {
@@ -63,12 +64,12 @@ html {
 	}
 
 	div[aria-roledescription] {
-		@apply h-full rounded-3xl;
+		@apply h-full;
 	}
 
 	div[aria-roledescription] div {
 		height: 100% !important;
-		@apply overflow-hidden;
+		@apply overflow-hidden rounded-3xl;
 	}
 }
 
