@@ -46,9 +46,10 @@ const Slideshow = () => {
 					<div key={index} className="h-full ">
 						<div
 							className="h-full "
-							style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}>
-							<span style={spanStyle}>{slideImage.caption}</span>
-						</div>
+							style={{
+								...divStyle,
+								backgroundImage: `linear-gradient(105deg,rgba(255,255,255,.9) 0,rgba(255,255,255,.9) 45%,transparent 45%),url(${slideImage.url})`,
+							}}></div>
 					</div>
 				))}
 			</Slide>

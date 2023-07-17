@@ -11,14 +11,17 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-				"gradient-conic":
-					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+				defaultGradient: "linear-gradient(-83deg,#ff4747,#0d1042);",
 			},
 			colors: {},
 			backgroundColor: {
 				dark: {
 					primary: "#252525",
+					theme: "#0d1042",
+					"neon-green": "#07f468",
+				},
+				light: {
+					theme: "#ff4747",
 				},
 			},
 		},
