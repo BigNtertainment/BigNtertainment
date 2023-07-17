@@ -10,7 +10,11 @@ const NavAuth = () => {
 		</>
 	);
 
-	return <div>{isAuthenticated ? authenticatedView : notAuthenticatedView}</div>;
+	return (
+		<div className="flex gap-4">
+			{isAuthenticated ? authenticatedView : notAuthenticatedView}
+		</div>
+	);
 };
 
 export default NavAuth;
