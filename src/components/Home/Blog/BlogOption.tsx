@@ -7,7 +7,7 @@ type Props = {
 };
 
 const BlogOption = ({ children, isActive, onClick }: Props) => {
-	const activeStyle = "bg-red-300";
+	const activeStyle = "bg-indigo-700";
 
 	return (
 		<li
