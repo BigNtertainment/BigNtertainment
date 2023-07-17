@@ -10,8 +10,7 @@ import Partners from "@/components/Home/Partners";
 
 export default function Home() {
 	return (
-		<div className="main-page-layout">
-			<Navigation />
+		<main className="main-page-layout">
 			<Header />
 			<Announcement />
 			<Games />
@@ -19,7 +18,6 @@ export default function Home() {
 			<Reviews />
 			<Partners />
 			<Newsletter />
-			<Footer />
-		</div>
+		</main>
 	);
 }
