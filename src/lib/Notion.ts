@@ -13,7 +13,7 @@ export default class Notion {
 
 	private readonly database = process.env.NOTION_BLOG_DATABASE_ID ?? "";
 
-	async getPublishedPosts() {
+	async getPublishedPosts(limit?: number | undefined) {
 		const response = await this.client.databases.query({
 			database_id: this.database,
 			filter: {
@@ -28,6 +28,7 @@ export default class Notion {
 					direction: "descending",
 				},
 			],
+			page_size: limit,
 		});
 
 		return response.results.map((res) => {
@@ -38,12 +39,12 @@ export default class Notion {
 	private static pageToPost(page: any): BlogPost {
 		let cover = page.cover;
 
-		switch (cover.type) {
+		switch (cover?.type) {
 			case "file":
-				cover = page.cover.file;
+				cover = page.cover?.file;
 				break;
 			case "external":
-				cover = page.cover.external.url;
+				cover = page.cover?.external?.url;
 				break;
 			default:
 				// add default cover
@@ -56,7 +57,7 @@ export default class Notion {
 			title: page.properties.Name.title[0]?.plain_text,
 			tags: page.properties.Tags.multi_select,
 			description: page.properties.Description.rich_text[0]?.plain_text,
-			date: page.properties.Updated.date.start,
+			date: page.properties.Updated.date?.start,
 			slug: page.properties.Slug.formula.string,
 		};
 	}
