@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BlogControlls from "./BlogControlls";
 import BlogInfo from "./BlogInfo";
 import Btn from "@/components/util/Btn";
@@ -10,8 +10,20 @@ import { BlogPost } from "@/types/INotion";
 
 const BlogList = () => {
 	const [selectedOption, setSelectedOption] = useState("");
-
+	const [uniqueTags, setUniqueTags] = useState<string[]>([]);
 	const { data } = useSWR("/api/posts?limit=6", fetcher);
+
+	useEffect(() => {
+		if (data) {
+			const posts = data.data as BlogPost[];
+
+			const tags = posts.flatMap((post) =>
+				post.tags.map((tag) => tag.name.replace("#", ""))
+			);
+
+			setUniqueTags([...new Set(tags)]);
+		}
+	}, [data]);
 
 	let listToRender: React.JSX.Element | React.JSX.Element[] = (
 		<div className="text-5xl mb-4 font-bold text-center col-[2/-2]">
@@ -21,12 +33,14 @@ const BlogList = () => {
 
 	if (data) {
 		const posts = data.data as BlogPost[];
+
 		listToRender = posts.map((post) => <BlogInfo key={post.id} />);
 	}
 
 	return (
 		<div className="grid grid-cols-[minmax(6rem,1fr)_repeat(8,minmax(min-content,14rem))_minmax(6rem,1fr)_]">
 			<BlogControlls
+				options={uniqueTags}
 				selectedOption={selectedOption}
 				setSelectedOption={setSelectedOption}
 			/>
