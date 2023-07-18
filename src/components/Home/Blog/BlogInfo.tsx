@@ -27,12 +27,12 @@ const BlogInfo = ({ post }: Props) => {
 			</div>
 			<div className="mx-8 opacity-80">{post.description}</div>
 			<div className=" mx-8 flex justify-between">
-				<div className="self-center">
+				<div className="self-center flex gap-4">
 					{post.tags.map((tag) => (
 						<Badge key={tag.id} name={tag.name.replace("#", "")} color={tag.color} />
 					))}
 				</div>
-				<div className="self-center mb-4 text-left ">
+				<div className="self-center mb-4 text-left translate-y-1/4">
 					<span className="underline">Read More</span> &rarr;
 				</div>
 			</div>
