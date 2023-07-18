@@ -14,7 +14,7 @@ const BlogList = () => {
 				selectedOption={selectedOption}
 				setSelectedOption={setSelectedOption}
 			/>
-			<ul className="grid grid-cols-3 mt-24 col-[2/-2] gap-10">
+			<ul className="grid grid-cols-3 mt-20 col-[2/-2] gap-10">
 				<BlogInfo />
 				<BlogInfo />
 				<BlogInfo />

@@ -18,7 +18,7 @@ const BlogControlls = ({ selectedOption, setSelectedOption }: Props) => {
 	}, []);
 
 	return (
-		<div className="border-b-2 col-[1/-1]">
+		<div className="col-[1/-1] relative after:border-t-2 after:w-full after:absolute after:bottom-0 after:left-0 after:bg-dark-primary after:opacity-[0.08]">
 			<ul className="flex justify-center">
 				{DUMMY_DATA.map((game) => {
 					return (

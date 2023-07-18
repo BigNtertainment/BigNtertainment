@@ -13,9 +13,17 @@ module.exports = {
 			backgroundImage: {
 				defaultGradient: "linear-gradient(-83deg,#ff4747,#0d1042);",
 			},
+			colors: {
+				dark: {
+					highlight: "#343434",
+				},
+			},
 			textColor: {
 				light: {
 					primary: "#252525",
+				},
+				dark: {
+					secondary: "#686868",
 				},
 			},
 			backgroundColor: {

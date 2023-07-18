@@ -29,6 +29,12 @@ html {
 	background-color: #555;
 }
 
+@layer utilities {
+	.after {
+		content: "";
+	}
+}
+
 @layer base {
 	.body {
 		font-family: "Roboto", sans-serif;
@@ -76,5 +82,15 @@ html {
 @layer components {
 	.main-page-layout {
 		@apply pt-2.5  px-4 grid grid-rows-[75vh_repeat(5,min-content)] grid-cols-[[full-start]_minmax(6rem,1fr)_[center-start]_repeat(8,[col-start]_minmax(min-content,14rem)_[col-end])_[center-end]_minmax(6rem,1fr)_[full-end]];
+	}
+
+	.blog-option.active::after {
+		content: "";
+		@apply absolute left-1/2 -translate-x-1/2 bottom-0 bg-light-theme  w-10/12 h-1;
+	}
+
+	.blog-option:not(:last-child)::before {
+		content: "";
+		@apply absolute -right-0.5 bg-red-50 opacity-[0.08] top-1/2 w-0.5 h-1/2 -translate-y-1/2;
 	}
 }
