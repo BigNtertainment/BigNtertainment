@@ -48,8 +48,18 @@ export default class Notion {
 				break;
 			default:
 				// add default cover
-				cover = "/public/defaultPostBackground.png";
+				cover = "/defaultPostBackground.png";
 		}
+
+		const createTime = new Date(page.properties.Created.created_time);
+
+		const date = `${createTime.getFullYear()}-${
+			createTime.getMonth() + 1 < 10
+				? `0${createTime.getMonth() + 1}`
+				: createTime.getMonth() + 1
+		}-${
+			createTime.getDate() < 10 ? `0${createTime.getDate()}` : createTime.getDate()
+		}`;
 
 		return {
 			id: page.id,
@@ -57,7 +67,7 @@ export default class Notion {
 			title: page.properties.Name.title[0]?.plain_text,
 			tags: page.properties.Tags.multi_select,
 			description: page.properties.Description.rich_text[0]?.plain_text,
-			date: page.properties.Updated.date?.start,
+			date: page.properties.Updated.date?.start || date,
 			slug: page.properties.Slug.formula.string,
 		};
 	}
