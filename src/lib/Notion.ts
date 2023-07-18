@@ -48,7 +48,7 @@ export default class Notion {
 				break;
 			default:
 				// add default cover
-				cover = "";
+				cover = "/public/defaultPostBackground.png";
 		}
 
 		return {
