@@ -15,7 +15,7 @@ module.exports = {
 			},
 			colors: {
 				dark: {
-					highlight: "#343434",
+					highlight: "#888",
 				},
 			},
 			textColor: {
@@ -23,7 +23,8 @@ module.exports = {
 					primary: "#252525",
 				},
 				dark: {
-					secondary: "#686868",
+					primary: "#d6d6d6",
+					secondary: "#888",
 				},
 			},
 			backgroundColor: {

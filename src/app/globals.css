@@ -4,6 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+	width: 8px; /* Optional: Customize the scrollbar width */
+	background-color: #252525; /* Base color */
+}
+
+/* Optional: Customize the draggable thumb */
+::-webkit-scrollbar-thumb {
+	background-color: #888; /* Thumb color */
+	border-radius: 8px; /* Optional: Customize the thumb border-radius */
+}
+
+/* Optional: Customize the scrollbar track */
+::-webkit-scrollbar-track {
+	background-color: #252525; /* Track color */
+}
+
+* {
+	scrollbar-color: #888 #252525;
+}
+
 *,
 *::after,
 *::before {
@@ -41,7 +61,7 @@ html {
 		font-weight: 300;
 		font-size: 1.6rem;
 		line-height: 1.6;
-		@apply text-white bg-dark-primary;
+		@apply text-dark-primary bg-dark-primary;
 	}
 
 	.react-slideshow-container + ul.indicators {

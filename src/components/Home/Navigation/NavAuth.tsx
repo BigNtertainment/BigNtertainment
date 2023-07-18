@@ -5,7 +5,9 @@ const NavAuth = () => {
 
 	const notAuthenticatedView = (
 		<>
-			<button className=" border-2 rounded-lg  px-10 font-bold">Sign In</button>
+			<button className=" border-2 border-dark-highlight text-dark-primary rounded-lg  px-10 font-bold">
+				Sign In
+			</button>
 		</>
 	);
 
