@@ -13,7 +13,7 @@ export default class Notion {
 
 	private readonly database = process.env.NOTION_BLOG_DATABASE_ID ?? "";
 
-	async getPublishedPosts(): Promise<BlogPost[]> {
+	async getPublishedPosts() {
 		const response = await this.client.databases.query({
 			database_id: this.database,
 			filter: {
@@ -53,10 +53,10 @@ export default class Notion {
 		return {
 			id: page.id,
 			cover,
-			title: page.properties.Name.title[0].plain_text,
+			title: page.properties.Name.title[0]?.plain_text,
 			tags: page.properties.Tags.multi_select,
-			description: page.properties.Description.rich_text[0].plain_text,
-			date: page.properties.Updated.last_edited_time,
+			description: page.properties.Description.rich_text[0]?.plain_text,
+			date: page.properties.Updated.date.start,
 			slug: page.properties.Slug.formula.string,
 		};
 	}

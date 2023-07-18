@@ -4,6 +4,7 @@ import Header from "@/components/Home/Header/Header";
 import Blog from "@/components/Home/Blog/Blog";
 import Reviews from "@/components/Home/Rewiews/Reviews";
 import Newsletter from "@/components/Home/Newsletter";
+import Notion from "@/lib/Notion";
 
 export default function Home() {
 	return (
