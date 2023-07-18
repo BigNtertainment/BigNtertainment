@@ -13,7 +13,7 @@ export default function Home() {
 			<Games />
 			<Blog />
 			<Reviews />
-			<Newsletter />
+			{/* <Newsletter /> */}
 		</main>
 	);
 }

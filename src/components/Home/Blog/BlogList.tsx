@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import BlogControlls from "./BlogControlls";
 import BlogInfo from "./BlogInfo";
+import Btn from "@/components/util/Btn";
 
 const BlogList = () => {
 	const [selectedOption, setSelectedOption] = useState("");
@@ -21,7 +22,7 @@ const BlogList = () => {
 				<BlogInfo />
 				<BlogInfo />
 			</ul>
-			<button className="col-[2/-2] mt-20">Read More</button>
+			<Btn className="col-[2/-2]">Read More</Btn>
 		</div>
 	);
 };

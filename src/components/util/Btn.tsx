@@ -1,13 +1,23 @@
+import { clsx, type ClassValue } from "clsx";
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
-type Props = {
+interface Props extends React.HTMLAttributes<HTMLButtonElement> {
 	children: ReactNode;
-};
+	className?: string;
+}
 
-const Btn = (props: Props & ButtonHTMLAttributes<HTMLButtonElement>) => {
+function cn(...inputs: ClassValue[]) {
+	return twMerge(clsx(inputs));
+}
+
+const Btn = ({ className, ...props }: Props) => {
 	return (
 		<button
-			className={`mt-16 mx-auto bg-dark-neon-green px-9 py-4 rounded-full  text-light-primary ${props.className}`}
+			className={cn(
+				"mt-16 mx-auto bg-dark-neon-green px-9 py-4 rounded-full  text-light-primary",
+				className
+			)}
 			{...props}>
 			{props.children}
 		</button>

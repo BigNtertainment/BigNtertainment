@@ -25,6 +25,7 @@ module.exports = {
 					"neon-green": "#07f468",
 				},
 				light: {
+					primary: "#eaeaea",
 					theme: "#ff4747",
 				},
 			},
