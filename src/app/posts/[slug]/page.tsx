@@ -1,6 +1,7 @@
 import Badge from "@/components/Home/Blog/Badge";
 import Notion from "@/lib/Notion";
 import moment from "moment";
+import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -10,10 +11,31 @@ type Props = {
 	params: { slug: string };
 };
 
-const Post = async ({ params }: Props) => {
-	const postSlug = params.slug;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const slug = params.slug;
 	const notion = new Notion();
-	const { post, markdown } = await notion.getBlogPost(postSlug);
+	const { post } = await notion.getBlogPost(slug);
+
+	if (!post) {
+		return {
+			title: "Not Found",
+			description: "The page is not found",
+		};
+	}
+
+	return {
+		title: post.title,
+		description: post.description,
+		alternates: {
+			canonical: `https://bigntertainment.github.io/posts/${slug}`,
+		},
+	};
+}
+
+const Post = async ({ params }: Props) => {
+	const slug = params.slug;
+	const notion = new Notion();
+	const { post, markdown } = await notion.getBlogPost(slug);
 
 	const wordsCount = markdown.parent.split(" ").length;
 

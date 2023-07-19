@@ -4,8 +4,11 @@ import type { Metadata } from "next";
 import Footer from "@/components/Home/Footer";
 
 export const metadata: Metadata = {
-	title: "BigNtertainment",
-	description: "BigNtertainment Games",
+	title: {
+		default: "BigNtertainment",
+		template: `%s | BigNtertainment`,
+	},
+	description: "BigNtertainment Game Development website",
 };
 
 export default function RootLayout({
