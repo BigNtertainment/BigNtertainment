@@ -1,5 +1,5 @@
 const Announcement = () => {
-	return <div className="col-[full-start/full-end]  "></div>;
+	return <aside className="col-[full-start/full-end]  "></aside>;
 };
 
 export default Announcement;

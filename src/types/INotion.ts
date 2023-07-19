@@ -13,3 +13,8 @@ export type BlogPost = {
 	description: string;
 	date: string;
 };
+
+export type PostPage = {
+	post: BlogPost;
+	markdown: string;
+};

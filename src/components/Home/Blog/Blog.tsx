@@ -3,10 +3,10 @@ import BlogList from "./BlogList";
 
 const Blog = () => {
 	return (
-		<div className="col-[full-start/full-end] mt-16">
+		<section className="col-[full-start/full-end] mt-16">
 			<h3 className="text-6xl font-bold text-center mb-20">Updates</h3>
 			<BlogList />
-		</div>
+		</section>
 	);
 };
 
