@@ -123,4 +123,9 @@ html {
 		content: "";
 		@apply absolute left-full ml-1 w-1.5 h-1.5 rounded-full bg-dark-highlight top-1/2 translate-x-full -translate-y-1/2;
 	}
+
+	.blog-author:not(:first-child)::after {
+		content: ",";
+		@apply absolute right-0 translate-x-full;
+	}
 }

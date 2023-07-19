@@ -10,6 +10,19 @@ module.exports = {
 	darkMode: "class",
 	theme: {
 		extend: {
+			typography: (theme) => ({
+				DEFAULT: {
+					css: {
+						p: {
+							color: theme("colors.dark.highlight"),
+						},
+						"*": {
+							color: theme("textColor.dark.primary"),
+						},
+					},
+				},
+			}),
+
 			backgroundImage: {
 				defaultGradient: "linear-gradient(-83deg,#ff4747,#0d1042);",
 			},
