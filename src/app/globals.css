@@ -128,4 +128,9 @@ html {
 		content: ",";
 		@apply absolute right-0 translate-x-full;
 	}
+
+	.footer::after {
+		content: "";
+		@apply absolute w-full h-0.5 bg-dark-highlight top-0;
+	}
 }

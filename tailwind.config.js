@@ -15,6 +15,7 @@ module.exports = {
 					css: {
 						p: {
 							color: theme("colors.dark.highlight"),
+							fontSize: "1.6rem",
 						},
 						"*": {
 							color: theme("textColor.dark.primary"),

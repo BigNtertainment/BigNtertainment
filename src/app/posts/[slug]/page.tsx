@@ -1,4 +1,6 @@
+import Badge from "@/components/Home/Blog/Badge";
 import Notion from "@/lib/Notion";
+import moment from "moment";
 import Link from "next/link";
 import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -26,9 +28,13 @@ const Post = async ({ params }: Props) => {
 		</Link>
 	));
 
+	const badges = post.tags.map((tag) => (
+		<Badge key={tag.id} color={tag.color} name={tag.name} />
+	));
+
 	return (
-		<main className="col-[center-start/center-end] blog-post-markdown grid grid-cols-7 gap-x-10 mt-7">
-			<div className="col-[1/-2]">
+		<main className="col-[center-start/center-end] blog-post-markdown grid grid-cols-7 gap-x-10 my-10">
+			<div className="col-[1/-2] -mb-3">
 				<Link href="/">Home</Link>
 				<div className="-translate-y-0.5 inline-block mx-1.5 text-dark-highlight">
 					»{" "}
@@ -36,13 +42,14 @@ const Post = async ({ params }: Props) => {
 				<Link href="/posts">Posts</Link>
 				<h1 className="text-7xl font-bold my-4">{post.title}</h1>
 				<div className="text-dark-highlight flex gap-6 blog-info">
-					<div>{post.date}</div>
+					<div>{moment(new Date(post.date)).format("LL")}</div>
 					<div>{timeToRead} min</div>
 					<div>{authors}</div>
 				</div>
 			</div>
 			<article className="prose prose-invert prose-2xl max-w-fit col-[1/-2]">
 				<ReactMarkdown>{markdown.parent}</ReactMarkdown>
+				<div className="flex items-start gap-5 my-10 mt-32">{badges}</div>
 			</article>
 			<aside className="mt-10">XD</aside>
 		</main>
