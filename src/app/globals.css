@@ -133,4 +133,8 @@ html {
 		content: "";
 		@apply absolute w-full h-0.5 bg-dark-highlight top-0;
 	}
+
+	code {
+		@apply !text-2xl;
+	}
 }

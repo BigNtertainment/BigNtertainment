@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -6,12 +7,14 @@ type Props = {
 };
 
 const Badge = ({ name, color }: Props) => {
-	console.log(name, color);
+	const badgeName = name.replace("#", "");
 
 	return (
-		<div className="rounded-full border-[#07f468] border px-5 py-0.5 text-[#07f468]">
-			{name}
-		</div>
+		<Link
+			href={`/posts?tag=${badgeName}`}
+			className="rounded-full border-[#07f468] border px-5 py-0.5 text-[#07f468] no-underline">
+			{badgeName}
+		</Link>
 	);
 };
 
