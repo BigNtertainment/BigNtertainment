@@ -4,6 +4,17 @@ export type Tag = {
 	name: string;
 };
 
+type PostAuthor = {
+	object: string;
+	id: string;
+	name: string;
+	avatar_url: string;
+	type: string;
+	person: {
+		email: string;
+	};
+};
+
 export type BlogPost = {
 	id: string;
 	slug: string;
@@ -12,6 +23,7 @@ export type BlogPost = {
 	tags: Tag[];
 	description: string;
 	date: string;
+	author: PostAuthor[];
 };
 
 export type PostPage = {

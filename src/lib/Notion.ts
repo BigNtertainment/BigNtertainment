@@ -46,6 +46,7 @@ export default class Notion {
 			description: page.properties.Description.rich_text[0]?.plain_text,
 			date: page.properties.Updated.date?.start || date,
 			slug: page.properties.Slug.formula.string,
+			author: page?.properties?.Author?.people,
 		};
 	}
 

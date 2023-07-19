@@ -33,7 +33,7 @@
 }
 
 html {
-	font-size: 62.5%; /* 1rem = 10px */
+	font-size: 62.5%;
 	box-sizing: border-box;
 }
 
@@ -90,6 +90,10 @@ html {
 		z-index: 10;
 	}
 
+	.blog-post-markdown article {
+		@apply text-dark-primary;
+	}
+
 	div[aria-roledescription] {
 		@apply h-full;
 	}
@@ -109,5 +113,14 @@ html {
 	.blog-option:not(:last-child)::before {
 		content: "";
 		@apply absolute -right-0.5 bg-red-50 opacity-[0.08] top-1/2 w-0.5 h-1/2 -translate-y-1/2;
+	}
+
+	.blog-info > * {
+		@apply relative;
+	}
+
+	.blog-info > *:not(:last-child)::before {
+		content: "";
+		@apply absolute left-full ml-1 w-1.5 h-1.5 rounded-full bg-dark-highlight top-1/2 translate-x-full -translate-y-1/2;
 	}
 }
