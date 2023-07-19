@@ -13,6 +13,10 @@ module.exports = {
 			backgroundImage: {
 				defaultGradient: "linear-gradient(-83deg,#ff4747,#0d1042);",
 			},
+			gridTemplateColumns: {
+				defaultLayout:
+					"[full-start] minmax(6rem,1fr) [center-start] repeat(8,[col-start] minmax(min-content,14rem) [col-end]) [center-end] minmax(6rem,1fr) [full-end]",
+			},
 			colors: {
 				dark: {
 					highlight: "#888",
