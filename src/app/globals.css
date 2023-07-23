@@ -137,4 +137,12 @@ html {
 	code {
 		@apply !text-2xl;
 	}
+
+	.game-panel:hover div {
+		@apply -translate-y-14 transition text-5xl;
+	}
+
+	.game-panel:hover span {
+		@apply opacity-100 transition;
+	}
 }

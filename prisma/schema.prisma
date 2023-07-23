@@ -18,5 +18,6 @@ model Game {
   release DateTime @default(now())
   slug String
   description String
+  gameUrl String
 }
 

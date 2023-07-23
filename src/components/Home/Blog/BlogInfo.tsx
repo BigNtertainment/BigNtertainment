@@ -9,8 +9,6 @@ type Props = {
 };
 
 const BlogInfo = ({ post }: Props) => {
-	console.log(post);
-
 	return (
 		<Link
 			href={`/posts/${post.slug}`}
