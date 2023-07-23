@@ -1,6 +1,6 @@
 import React from "react";
 import GamesList from "./GamesList";
-import Btn from "@/components/util/Btn";
+import Btn from "@/components/util/LinkButton";
 
 const Games = () => {
 	return (

@@ -21,7 +21,14 @@ const Logo = (props: any) => {
 
 	if (!src) {
 		// Return a placeholder or loading state during SSR
-		return <div>Loading...</div>;
+		return (
+			<Image
+				loading="lazy"
+				src="/logo-dark.svg"
+				alt="BigNtertainment logo"
+				{...props}
+			/>
+		);
 	}
 
 	return (

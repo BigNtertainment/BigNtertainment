@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 import BlogControlls from "./BlogControlls";
 import BlogInfo from "./BlogInfo";
-import Btn from "@/components/util/Btn";
+import Btn from "@/components/util/LinkButton";
 import useSWR from "swr";
-import { fetcher } from "@/components/util/Fetchter";
+import { fetcher } from "@/lib/utils/fetchter";
 import { BlogPost } from "@/types/INotion";
 
 const BlogList = () => {
