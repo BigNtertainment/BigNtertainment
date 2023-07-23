@@ -1,4 +1,4 @@
-import Logo from "../../util/Logo";
+import Logo from "../../shared/Logo";
 import NavAuth from "./NavAuth";
 import NavLinks from "./NavLinks";
 import NavTheme from "./NavTheme";

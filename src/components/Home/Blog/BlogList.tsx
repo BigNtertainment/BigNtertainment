@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import BlogControlls from "./BlogControlls";
 import BlogInfo from "./BlogInfo";
-import Btn from "@/components/util/LinkButton";
+import Button from "@/components/shared/LinkButton";
 import useSWR from "swr";
 import { fetcher } from "@/lib/utils/fetchter";
 import { BlogPost } from "@/types/INotion";
@@ -31,7 +31,9 @@ const BlogList = () => {
 				setSelectedOption={setSelectedOption}
 			/>
 			<ul className="grid grid-cols-3 mt-20 col-[2/-2] gap-10">{listToRender}</ul>
-			<Btn className="col-[2/-2]">Read More</Btn>
+			<Button className="col-[2/-2]" href="/posts">
+				Read More
+			</Button>
 		</div>
 	);
 };

@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 		title: post.title,
 		description: post.description,
 		alternates: {
-			canonical: `https://bigntertainment.github.io/posts/${slug}`,
+			canonical: `${process.env.baseUrl}/posts/${slug}`,
 		},
 	};
 }
