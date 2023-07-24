@@ -3,12 +3,16 @@ import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./schemas";
 
-export default defineConfig({
-	name: "default",
-	title: "BigNtertainment",
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
-	projectId: "e0wxu9kd",
-	dataset: "production",
+export default defineConfig({
+	basePath: "/studio",
+	name: "BigNtertainment_Content_Studio",
+	title: "BigNtertainment Studio",
+
+	projectId,
+	dataset,
 
 	plugins: [deskTool(), visionTool()],
 
