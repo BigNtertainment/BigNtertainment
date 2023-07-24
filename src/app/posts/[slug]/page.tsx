@@ -72,7 +72,7 @@ const Post = async ({ params }: Props) => {
 			<article className="prose prose-invert prose-2xl max-w-fit col-[1/-2]">
 				<ReactMarkdown>{markdown.parent}</ReactMarkdown>
 				<div className="flex items-center justify-between my-10 mt-20">
-					<div className="flex items-center justify-center gap-5 ">{badges}</div>
+					<div className="flex items-center justify-center gap-5">{badges}</div>
 					<Link
 						href="/posts"
 						className="py-3 w-max rounded-lg px-7 text-3xl no-underline">

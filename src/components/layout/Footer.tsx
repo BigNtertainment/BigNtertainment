@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../shared/Logo";
+import Link from "next/link";
 
 const Footer = () => {
 	return (
@@ -8,9 +9,11 @@ const Footer = () => {
 				<Logo width={100} height={100} className="opacity-20" />
 			</div>
 			<div className="col-[2/5] flex uppercase justify-center border-t-dark-highlight text-dark-secondary border-t pt-5 text-xl gap-4">
-				<span>Home</span>
-				<span>Home</span>
-				<span>Home</span>
+				<Link href="/">Home</Link>
+				<Link href="/games">Games</Link>
+				<Link href="/posts">Posts</Link>
+				<Link href="/about">About</Link>
+				<Link href="/contact">Contact</Link>
 			</div>
 			<div className="col-[7/-2] uppercase text-center border-t-dark-highlight text-dark-secondary border-t pt-5 text-xl">
 				Built by Dzajlopment. All rights reserved &copy;2023
