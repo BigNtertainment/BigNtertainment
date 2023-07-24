@@ -1,3 +1,4 @@
+import PostsList from "@/components/Posts/PostsList";
 import React from "react";
 
 export const metadata = {
@@ -9,7 +10,11 @@ export const metadata = {
 };
 
 const Page = () => {
-	return <div>page</div>;
+	return (
+		<main className="col-[center-start/center-end]">
+			<PostsList />
+		</main>
+	);
 };
 
 export default Page;

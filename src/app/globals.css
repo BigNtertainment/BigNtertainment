@@ -145,4 +145,8 @@ html {
 	.game-panel:hover span {
 		@apply opacity-100 transition;
 	}
+
+	.test {
+		grid-template-rows: repeat(auto-fit, minmax(19rem, 1fr));
+	}
 }
