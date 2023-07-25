@@ -18,7 +18,7 @@ export type memberQuery = {
 const transformMember = (members: any[]): member[] => {
 	return members.map((member) => ({
 		id: member._id,
-		name: member.firstName,
+		name: member.name,
 		surname: member.surname,
 		personalPageLink: member.personalPageLink,
 		description: member.description,

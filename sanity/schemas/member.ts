@@ -1,10 +1,13 @@
+import slugify from "slugify";
+import { generateSlug } from "../utils/generate";
+
 const memberSchema = {
 	name: "member",
 	title: "Member",
 	type: "document",
 	fields: [
 		{
-			name: "firstName",
+			name: "name",
 			title: "First Name",
 			type: "string",
 		},
@@ -33,8 +36,8 @@ const memberSchema = {
 			title: "Slug",
 			type: "slug",
 			options: {
-				source: "firstName",
-				slugify: (input: string) => input.toLowerCase().replace(/\s+/g, "-"),
+				source: (doc: any) => `${doc.name} ${doc.surname}`,
+				slugify: (input: string) => generateSlug(input),
 			},
 		},
 	],
