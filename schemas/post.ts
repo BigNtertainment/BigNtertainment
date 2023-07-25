@@ -1,27 +1,15 @@
-const gameSchema = {
-	title: "Game",
-	name: "game",
+import badgeSchema from "./badge";
+import commentSchema from "./comment";
+
+const postSchema = {
+	name: "post",
+	title: "Post",
 	type: "document",
 	fields: [
 		{
-			title: "Name",
-			name: "name",
+			name: "title",
+			title: "Title",
 			type: "string",
-		},
-		{
-			title: "Slug",
-			name: "slug",
-			type: "slug",
-			options: {
-				source: "title",
-				maxLength: 100,
-			},
-		},
-		{
-			name: "likes",
-			title: "Likes",
-			type: "number",
-			initialValue: 0,
 		},
 		{
 			name: "publishedAt",
@@ -34,20 +22,19 @@ const gameSchema = {
 			type: "image",
 		},
 		{
-			title: "Gameplay",
-			name: "gameplay",
+			title: "Slug",
+			name: "slug",
+			type: "slug",
+			options: {
+				source: "title",
+				maxLength: 100,
+			},
+		},
+		{
+			name: "badges",
+			title: "Badges",
 			type: "array",
-			of: [{ type: "image" }],
-		},
-		{
-			title: "Description",
-			name: "description",
-			type: "string",
-		},
-		{
-			title: "Game Link",
-			name: "gameLink",
-			type: "url",
+			of: [badgeSchema],
 		},
 		{
 			name: "content",
@@ -85,7 +72,19 @@ const gameSchema = {
 				},
 			],
 		},
+		{
+			name: "likes",
+			title: "Likes",
+			type: "number",
+			initialValue: 0,
+		},
+		{
+			name: "comments",
+			title: "Comments",
+			type: "array",
+			of: [commentSchema], // Use the previously defined commentSchema as an array of comments
+		},
 	],
 };
 
-export default gameSchema;
+export default postSchema;
