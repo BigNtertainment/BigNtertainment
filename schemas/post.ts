@@ -84,6 +84,12 @@ const postSchema = {
 			type: "array",
 			of: [commentSchema], // Use the previously defined commentSchema as an array of comments
 		},
+		{
+			name: "author",
+			title: "Author",
+			type: "reference",
+			to: [{ type: "member" }],
+		},
 	],
 };
 
