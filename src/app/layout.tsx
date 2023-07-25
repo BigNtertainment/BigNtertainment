@@ -2,6 +2,7 @@ import Navigation from "@/components/layout/Navigation/Navigation";
 import "./globals.css";
 import type { Metadata } from "next";
 import Footer from "@/components/layout/Footer";
+import LayoutProvider from "@/components/layout/LayoutProvider";
 
 export const metadata: Metadata = {
 	title: {
@@ -16,13 +17,5 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return (
-		<html lang="en">
-			<body className="body">
-				<Navigation />
-				{children}
-				<Footer />
-			</body>
-		</html>
-	);
+	return <LayoutProvider>{children}</LayoutProvider>;
 }
