@@ -1,8 +1,4 @@
-// Filename: memberSchema.ts
-import { Schema } from "@sanity/schema";
-
-// Define the schema for the member
-const memberSchema = Schema.compile({
+const memberSchema = {
 	name: "member",
 	title: "Member",
 	type: "document",
@@ -37,11 +33,11 @@ const memberSchema = Schema.compile({
 			title: "Slug",
 			type: "slug",
 			options: {
-				source: "firstName", // Use 'firstName' field as the source for the slug
+				source: "firstName",
 				slugify: (input: string) => input.toLowerCase().replace(/\s+/g, "-"),
 			},
 		},
 	],
-});
+};
 
 export default memberSchema;
