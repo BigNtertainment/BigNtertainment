@@ -1,1 +1,3 @@
-export const schemaTypes = []
+import { badgeSchema } from "./badge";
+
+export const schemaTypes = [badgeSchema];
