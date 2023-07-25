@@ -2,6 +2,7 @@ import badgeSchema from "./badge";
 import commentSchema from "./comment";
 import gameSchema from "./game";
 import postSchema from "./post";
+import recommendedCategoriesSchema from "./recomendedCategories";
 import recommendedGamesSchema from "./recomendedGames";
 import sliderSchema from "./slider";
 
@@ -12,4 +13,5 @@ export const schemaTypes = [
 	postSchema,
 	sliderSchema,
 	recommendedGamesSchema,
+	recommendedCategoriesSchema,
 ];

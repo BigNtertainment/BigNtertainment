@@ -18,6 +18,12 @@ const gameSchema = {
 			},
 		},
 		{
+			name: "badge",
+			title: "Badge",
+			type: "reference",
+			to: [{ type: "badge" }],
+		},
+		{
 			name: "likes",
 			title: "Likes",
 			type: "number",
