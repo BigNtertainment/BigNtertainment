@@ -14,6 +14,11 @@ const commentSchema = {
 			type: "text",
 		},
 		{
+			name: "publishedAt",
+			title: "Published At",
+			type: "datetime",
+		},
+		{
 			name: "likes",
 			title: "Likes",
 			type: "number",
