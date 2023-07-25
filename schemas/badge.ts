@@ -13,7 +13,7 @@ export interface SanityBadgeDocument {
 	color: BadgeColor;
 }
 
-export const badgeSchema = {
+ const badgeSchema = {
 	title: "Badge",
 	name: "badge",
 	type: "document",
@@ -27,6 +27,16 @@ export const badgeSchema = {
 			title: "Color",
 			name: "color",
 			type: "string",
+			options: {
+				list: [
+					{ title: "Red", value: "red" },
+					{ title: "Green", value: "green" },
+					{ title: "Violet", value: "violet" },
+					{ title: "Blue", value: "blue" },
+				],
+			},
 		},
 	],
 };
+
+export default badgeSchema
