@@ -33,8 +33,8 @@ const postSchema = {
 		{
 			name: "badges",
 			title: "Badges",
-			type: "array",
-			of: [badgeSchema],
+			type: "reference",
+			to: [{ type: "badge" }],
 		},
 		{
 			name: "content",

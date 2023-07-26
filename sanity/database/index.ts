@@ -5,12 +5,14 @@ import {
 	type MemberQuery,
 } from "./controller/member";
 import { BadgeQuery, getAllBadges, getOneBadge } from "./controller/badge";
+import { GameQuery, getAllGames, getOneGame } from "./controller/games";
 
 class SanityDatabase {
 	private client: SanityClient;
 
 	members: MemberQuery;
 	badges: BadgeQuery;
+	games: GameQuery;
 
 	constructor() {
 		this.client = createClient({
@@ -28,6 +30,11 @@ class SanityDatabase {
 		this.badges = {
 			getAll: getAllBadges.bind(this),
 			getOne: getOneBadge.bind(this),
+		};
+
+		this.games = {
+			getAll: getAllGames.bind(this),
+			getOne: getOneGame.bind(this),
 		};
 	}
 }
