@@ -9,6 +9,7 @@ const Location = () => {
 			<div className="-translate-y-0.5 inline-block mx-1.5 text-dark-highlight">
 				»{" "}
 			</div>
+			<Link href="/posts">Posts</Link>
 		</>
 	);
 };

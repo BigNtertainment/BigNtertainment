@@ -4,12 +4,13 @@ import moment from "moment";
 import Authors from "./Authors";
 import TimeToRead from "./TimeToRead";
 import Location from "./Location";
+import { cn } from "@/lib/utils/tailwind";
 
-const Header = (post: { title: string; date: string }) => {
+const Header = (post: { title: string; date: string; className: string }) => {
 	const date = moment(new Date(post.date)).format("LL");
 
 	return (
-		<div className="col-[1/-2] -mb-3">
+		<div className={cn("-mb-3", post.className)}>
 			<Location />
 			<h1 className="text-7xl font-bold my-4">{post.title}</h1>
 			<div className="text-dark-highlight flex gap-6 blog-info">
