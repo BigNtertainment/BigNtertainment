@@ -33,6 +33,9 @@ const gameSchema = {
 			name: "publishedAt",
 			title: "Published At",
 			type: "datetime",
+			options: {
+				default: () => new Date().toISOString(),
+			},
 		},
 		{
 			title: "Cover",

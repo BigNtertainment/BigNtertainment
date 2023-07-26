@@ -1,3 +1,4 @@
+import { Rule } from "sanity";
 import badgeSchema from "./badge";
 import commentSchema from "./comment";
 
@@ -15,6 +16,9 @@ const postSchema = {
 			name: "publishedAt",
 			title: "Published At",
 			type: "datetime",
+			options: {
+				default: () => new Date().toISOString(),
+			},
 		},
 		{
 			title: "Cover",
