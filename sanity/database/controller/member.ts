@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 import { getAll, getOne } from "./factory";
 
-export type member = {
+export type Member = {
 	id: string;
 	name: string;
 	surname: string;
@@ -11,9 +11,9 @@ export type member = {
 	image: string;
 };
 
-export type memberQuery = {
-	getAll: () => Promise<member[] | null>;
-	getOne: (slug: string) => Promise<member | null>;
+export type MemberQuery = {
+	getAll: () => Promise<Member[] | null>;
+	getOne: (slug: string) => Promise<Member | null>;
 };
 
 export async function getAllMembers(this: any) {

@@ -2,13 +2,15 @@ import { SanityClient, createClient } from "next-sanity";
 import {
 	getAllMembers,
 	getOneMember,
-	type memberQuery,
+	type MemberQuery,
 } from "./controller/member";
+import { BadgeQuery, getAllBadges, getOneBadge } from "./controller/badge";
 
 class SanityDatabase {
 	private client: SanityClient;
 
-	members: memberQuery;
+	members: MemberQuery;
+	badges: BadgeQuery;
 
 	constructor() {
 		this.client = createClient({
@@ -21,6 +23,11 @@ class SanityDatabase {
 		this.members = {
 			getAll: getAllMembers.bind(this),
 			getOne: getOneMember.bind(this),
+		};
+
+		this.badges = {
+			getAll: getAllBadges.bind(this),
+			getOne: getOneBadge.bind(this),
 		};
 	}
 }
