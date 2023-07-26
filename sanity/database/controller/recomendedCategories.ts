@@ -8,7 +8,9 @@ export type RecommendedCategoryQuery = {
 };
 
 export async function getAllRecommendedCategories(this: any) {
-	const query = groq`*[_type == "recommendedCategories"]`;
+	const query = groq`*[_type == "recommendedCategories"]{
+    badges
+  }`;
 
 	return getAll.call(this, {
 		query,
