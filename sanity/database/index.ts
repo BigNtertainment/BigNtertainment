@@ -6,6 +6,7 @@ import {
 } from "./controller/member";
 import { BadgeQuery, getAllBadges, getOneBadge } from "./controller/badge";
 import { GameQuery, getAllGames, getOneGame } from "./controller/games";
+import { PostQuery, getAllPosts, getOnePost } from "./controller/post";
 
 class SanityDatabase {
 	private client: SanityClient;
@@ -13,6 +14,7 @@ class SanityDatabase {
 	members: MemberQuery;
 	badges: BadgeQuery;
 	games: GameQuery;
+	posts: PostQuery;
 
 	constructor() {
 		this.client = createClient({
@@ -35,6 +37,11 @@ class SanityDatabase {
 		this.games = {
 			getAll: getAllGames.bind(this),
 			getOne: getOneGame.bind(this),
+		};
+
+		this.posts = {
+			getAll: getAllPosts.bind(this),
+			getOne: getOnePost.bind(this),
 		};
 	}
 }
