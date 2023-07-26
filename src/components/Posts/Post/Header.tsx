@@ -6,7 +6,12 @@ import TimeToRead from "./TimeToRead";
 import Location from "./Location";
 import { cn } from "@/lib/utils/tailwind";
 
-const Header = (post: { title: string; date: string; className: string }) => {
+const Header = (post: {
+	title: string;
+	date: string;
+	className: string;
+	content: any;
+}) => {
 	const date = moment(new Date(post.date)).format("LL");
 
 	return (
@@ -15,7 +20,7 @@ const Header = (post: { title: string; date: string; className: string }) => {
 			<h1 className="text-7xl font-bold my-4">{post.title}</h1>
 			<div className="text-dark-highlight flex gap-6 blog-info">
 				<div>{date}</div>
-				<TimeToRead />
+				<TimeToRead content={post.content} />
 				<Authors />
 			</div>
 		</div>
