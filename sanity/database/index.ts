@@ -11,6 +11,7 @@ import {
 	RecommendedCategoryQuery,
 	getAllRecommendedCategories,
 } from "./controller/recomendedCategories";
+import { SliderQuery, getAllSlides } from "./controller/slider";
 
 class SanityDatabase {
 	private client: SanityClient;
@@ -20,6 +21,7 @@ class SanityDatabase {
 	games: GameQuery;
 	posts: PostQuery;
 	recommendedCategories: RecommendedCategoryQuery;
+	slider: SliderQuery;
 
 	constructor() {
 		this.client = createClient({
@@ -51,6 +53,10 @@ class SanityDatabase {
 
 		this.recommendedCategories = {
 			getAll: getAllRecommendedCategories.bind(this),
+		};
+
+		this.slider = {
+			getAll: getAllSlides.bind(this),
 		};
 	}
 }
