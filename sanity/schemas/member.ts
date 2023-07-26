@@ -1,4 +1,3 @@
-import slugify from "slugify";
 import { generateSlug } from "../utils/generate";
 
 const memberSchema = {

@@ -1,5 +1,5 @@
 import { SanityClient, createClient } from "next-sanity";
-import { getAll, type memberQuery } from "./controller/member";
+import { getAllMembers, type memberQuery } from "./controller/member";
 
 class SanityDatabase {
 	private client: SanityClient;
@@ -15,7 +15,8 @@ class SanityDatabase {
 		});
 
 		this.members = {
-			getAll: getAll.bind(this),
+			getAll: getAllMembers.bind(this),
+			// getOne: getOne.bind(this),
 		};
 	}
 }
