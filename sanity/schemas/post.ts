@@ -31,8 +31,8 @@ const postSchema = {
 			},
 		},
 		{
-			name: "badges",
-			title: "Badges",
+			name: "badge",
+			title: "Badge",
 			type: "reference",
 			to: [{ type: "badge" }],
 		},
