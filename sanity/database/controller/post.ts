@@ -46,7 +46,7 @@ export async function getAllPosts(this: any) {
     "content": content,
     "likes": likes,
     "comments": comments,
-    "author": author->{_ref, _type}
+    "author": author
   }`;
 
 	return getAll.call(this, {
