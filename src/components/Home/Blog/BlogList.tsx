@@ -7,10 +7,13 @@ import Button from "@/components/shared/LinkButton";
 import useSWR from "swr";
 import { fetcher } from "@/lib/utils/fetchter";
 import { BlogPost } from "@/types/INotion";
+import SanityDatabase from "../../../../sanity/database";
 
 const BlogList = () => {
 	const [selectedOption, setSelectedOption] = useState("");
 	const { data } = useSWR("/api/posts?limit=6", fetcher);
+
+	// console.log(selectedOption);
 
 	let listToRender: React.JSX.Element | React.JSX.Element[] = (
 		<div className="text-5xl mb-4 font-bold text-center col-[2/-2]">
@@ -23,6 +26,12 @@ const BlogList = () => {
 
 		listToRender = posts.map((post) => <BlogInfo key={post.id} post={post} />);
 	}
+
+	const database = new SanityDatabase();
+
+	database.posts.getAll().then((data) => {
+		console.log(data);
+	});
 
 	return (
 		<div className="grid grid-cols-[minmax(6rem,1fr)_repeat(8,minmax(min-content,14rem))_minmax(6rem,1fr)_]">

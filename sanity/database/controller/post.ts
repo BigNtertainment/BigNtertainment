@@ -42,11 +42,11 @@ export async function getAllPosts(this: any) {
     "publishedAt": publishedAt,
     "cover": cover.asset->url,
     "slug": slug.current,
-    "badge": badge->{_ref, _type},
+    "badge": badge[]->,
     "content": content,
     "likes": likes,
     "comments": comments,
-    "author": author
+    "author": author->{name, surname, "slug": slug.current, "image": image.asset->url}
   }`;
 
 	return getAll.call(this, {
@@ -60,11 +60,11 @@ export async function getOnePost(this: any, slug: string) {
     "publishedAt": publishedAt,
     "cover": cover.asset->url,
     "slug": slug.current,
-    "badge": badge->{_ref, _type},
+    "badge": badge[]->,
     "content": content,
     "likes": likes,
     "comments": comments,
-    "author": author->{_ref, _type}
+    "author": author->{name, surname, "slug": slug.current, "image": image.asset->url}
   }`;
 
 	return getOne.call(this, { query, params: { slug } });
