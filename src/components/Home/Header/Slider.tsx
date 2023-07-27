@@ -5,9 +5,13 @@ import useSWR from "swr";
 import "react-slideshow-image/dist/styles.css";
 import { fetcher } from "@/lib/utils/fetchter";
 import { Slider } from "../../../../sanity/database/controller/slider";
+import BlockContent from "@sanity/block-content-to-react";
 
 const Slideshow = () => {
 	const { data } = useSWR("/api/slider", fetcher);
+
+	const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+	const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 	const slides = data?.data as Slider[];
 
@@ -31,8 +35,12 @@ const Slideshow = () => {
 								backgroundImage: `linear-gradient(105deg,rgba(37,37,37,.9) 0,rgba(37,37,37,.9) 45%,transparent 45%),url(${slide.image})`,
 							}}>
 							<div>
-								<div className="uppercase flex flex-col gap-8 items-center h-full flex-1 mt-32">
-									XD
+								<div className="uppercase flex flex-col gap-8  h-full flex-1 ml-14 mt-28">
+									<BlockContent
+										blocks={slide.text}
+										projectId={projectId}
+										dataset={dataset}
+									/>
 								</div>
 							</div>
 						</div>
