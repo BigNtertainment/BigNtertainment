@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils/tailwind";
-
-export type BadgeColor = "red" | "green" | "violet" | "blue";
+import { BadgeColor } from "../../../sanity/schemas/badge";
 
 type LinkProps = {
 	href: string;
