@@ -36,6 +36,12 @@ module.exports = {
 				dark: {
 					highlight: "#888",
 				},
+				badge: {
+					blue: "#0074D9",
+					red: "#FF4136",
+					violet: "#B10DC9",
+					green: "#07f468",
+				},
 			},
 			textColor: {
 				light: {
