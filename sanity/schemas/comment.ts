@@ -9,8 +9,8 @@ const commentSchema = {
 			type: "string", // You can define a separate schema for users and reference it here
 		},
 		{
-			name: "comment",
-			title: "Comment",
+			name: "content",
+			title: "Content",
 			type: "text",
 		},
 		{

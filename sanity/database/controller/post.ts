@@ -15,7 +15,7 @@ export type Post = {
 	publishedAt: string;
 	cover: string;
 	slug: string;
-	badge: Badge;
+	badges: Badge[];
 	content: Array<
 		| {
 				_type: string;
@@ -47,7 +47,7 @@ export async function getAllPosts(this: any) {
     "publishedAt": publishedAt,
     "cover": cover.asset->url,
     "slug": slug.current,
-    "badge": badge[]->,
+    "badges": badges[]->,
     "content": content,
     "likes": likes,
     "comments": comments,
