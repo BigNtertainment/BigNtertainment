@@ -1,5 +1,3 @@
-import { Rule } from "sanity";
-
 export type BadgeColor = "red" | "green" | "violet" | "blue";
 
 export interface Badge {
@@ -24,7 +22,6 @@ const badgeSchema = {
 			title: "Name",
 			name: "name",
 			type: "string",
-			validation: (Rule: Rule) => Rule.required().unique(),
 		},
 		{
 			title: "Color",

@@ -35,7 +35,7 @@ const Slideshow = () => {
 								backgroundImage: `linear-gradient(105deg,rgba(37,37,37,.9) 0,rgba(37,37,37,.9) 45%,transparent 45%),url(${slide.image})`,
 							}}>
 							<div>
-								<div className="uppercase flex flex-col gap-8  h-full flex-1 ml-14 mt-28">
+								<div className="uppercase flex flex-col gap-8  h-full flex-1 ml-14 mt-28 prose  prose-invert prose-2xl break-words">
 									<BlockContent
 										blocks={slide.text}
 										projectId={projectId}
