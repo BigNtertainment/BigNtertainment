@@ -18,7 +18,7 @@ const Post = async ({ params }: Props) => {
 		return notFound();
 	}
 
-	//TODO: Add site map, comments, author, badges, next article
+	//TODO: Add site map, comments, badges, next article
 
 	return (
 		<main className="col-[center-start/center-end] blog-post-markdown grid grid-cols-7 gap-x-10 my-8">
@@ -27,6 +27,7 @@ const Post = async ({ params }: Props) => {
 				title={post.title}
 				className="col-[1/-2]"
 				content={post.content}
+				author={post.author}
 			/>
 			<Baner src={post.cover} title={post.title} className="mt-12 col-[1/-2]" />
 			<Content blocks={post.content} className="col-[1/-2]" />

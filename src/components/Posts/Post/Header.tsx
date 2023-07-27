@@ -5,12 +5,14 @@ import Authors from "./Authors";
 import TimeToRead from "./TimeToRead";
 import Location from "./Location";
 import { cn } from "@/lib/utils/tailwind";
+import { Author } from "../../../../sanity/database/controller/post";
 
 const Header = (post: {
 	title: string;
 	date: string;
 	className: string;
 	content: any;
+	author: Author;
 }) => {
 	const date = moment(new Date(post.date)).format("LL");
 
@@ -21,7 +23,7 @@ const Header = (post: {
 			<div className="text-dark-highlight flex gap-6 blog-info">
 				<div>{date}</div>
 				<TimeToRead content={post.content} />
-				<Authors />
+				<Authors author={post.author} />
 			</div>
 		</div>
 	);

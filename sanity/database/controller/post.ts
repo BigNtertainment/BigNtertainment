@@ -2,6 +2,14 @@ import { groq } from "next-sanity";
 import { getAll, getOne } from "./factory";
 import { Badge } from "./badge";
 
+export type Author = {
+	id: string;
+	name: string;
+	surname: string;
+	image: string;
+	slug: string;
+};
+
 export type Post = {
 	title: string;
 	publishedAt: string;
@@ -25,10 +33,7 @@ export type Post = {
 		};
 		comment: string;
 	}>;
-	author: {
-		_ref: string;
-		_type: string;
-	};
+	author: Author;
 };
 
 export type PostQuery = {
@@ -46,7 +51,7 @@ export async function getAllPosts(this: any) {
     "content": content,
     "likes": likes,
     "comments": comments,
-    "author": author->{name, surname, "slug": slug.current, "image": image.asset->url}
+    "author": author->{"id": _id, name, surname, "slug": slug.current, "image": image.asset->url}
   }`;
 
 	return getAll.call(this, {
@@ -64,7 +69,7 @@ export async function getOnePost(this: any, slug: string) {
     "content": content,
     "likes": likes,
     "comments": comments,
-    "author": author->{name, surname, "slug": slug.current, "image": image.asset->url}
+    "author": author->{"id": _id, name, surname, "slug": slug.current, "image": image.asset->url}
   }`;
 
 	return getOne.call(this, { query, params: { slug } });
