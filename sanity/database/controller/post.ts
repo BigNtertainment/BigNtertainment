@@ -39,20 +39,26 @@ export async function getAllPosts(this: any) {
 
 export async function getOnePost(this: any, slug: string) {
 	const query = groq`*[_type == "post" && slug.current == $slug][0]{
-    "title": title,
-    "publishedAt": publishedAt,
-    "cover": cover.asset->url,
-    "slug": slug.current,
+		"cover": cover.asset->url,
+		title,
 		"badges": badges[]->{
 			"id": _id,
-			color,
-			name
+			name,
+			color
 		},
-    "content",
-    "likes",
-    "comments",
-    "author": author->{"id": _id, name, surname, "slug": slug.current, "image": image.asset->url}
-  }`;
+		content,
+		likes,
+		"slug": slug.current,
+		publishedAt,
+		comments,
+		"author": author->{
+			"id": _id,
+			name,
+			surname,
+			"slug": slug.current,
+			"image": image.asset->url
+		}
+	}`;
 
 	return getOne.call(this, { query, params: { slug } });
 }

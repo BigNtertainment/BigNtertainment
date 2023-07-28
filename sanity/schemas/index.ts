@@ -11,7 +11,7 @@ export const schemaTypes = [
 	badgeSchema,
 	gameSchema,
 	commentSchema,
-	// postSchema,
+	postSchema,
 	sliderSchema,
 	recommendedGamesSchema,
 	recommendedCategoriesSchema,

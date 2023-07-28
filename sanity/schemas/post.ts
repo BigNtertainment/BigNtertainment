@@ -1,7 +1,3 @@
-import { Rule } from "sanity";
-import badgeSchema from "./badge";
-import commentSchema from "./comment";
-
 const postSchema = {
 	name: "post",
 	title: "Post",
@@ -86,7 +82,7 @@ const postSchema = {
 			name: "comments",
 			title: "Comments",
 			type: "array",
-			of: [commentSchema], // Use the previously defined commentSchema as an array of comments
+			of: [{ type: "reference", to: { type: "comment" } }], // Use the previously defined commentSchema as an array of comments
 		},
 		{
 			name: "author",
