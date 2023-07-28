@@ -42,17 +42,7 @@ export type PostQuery = {
 };
 
 export async function getAllPosts(this: any) {
-	const query = groq`*[_type == "post"]{
-    "title": title,
-    "publishedAt": publishedAt,
-    "cover": cover.asset->url,
-    "slug": slug.current,
-    "badges": badges[]->,
-    "content": content,
-    "likes": likes,
-    "comments": comments,
-    "author": author->{"id": _id, name, surname, "slug": slug.current, "image": image.asset->url}
-  }`;
+	const query = groq`*[_type == "post"]`;
 
 	return getAll.call(this, {
 		query,

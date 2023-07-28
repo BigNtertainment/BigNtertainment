@@ -20,7 +20,7 @@ export async function getAllGames(this: any) {
 	const query = groq`*[_type == "game"]{
 		"id": _id,
 		name,
-		badge,
+		badges,
 		likes,
 		description,
 		"slug": slug.current,
