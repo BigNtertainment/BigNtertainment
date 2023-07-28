@@ -1,6 +1,8 @@
 import { groq } from "next-sanity";
 import { getAll, getOne } from "./factory";
 import { Badge } from "./badge";
+import { MarkdownBlock } from "@/types/TSanity";
+import { Comment } from "../../schemas/comment";
 
 export type Author = {
 	id: string;
@@ -16,23 +18,9 @@ export type Post = {
 	cover: string;
 	slug: string;
 	badges: Badge[];
-	content: Array<
-		| {
-				_type: string;
-				style?: string;
-				children: Array<{ text: string } | { _type: string; url: string }>;
-		  }
-		| { _type: string; asset: { _ref: string; _type: string } }
-	>;
+	content: MarkdownBlock;
 	likes: number;
-	comments: Array<{
-		_type: string;
-		author: {
-			_ref: string;
-			_type: string;
-		};
-		comment: string;
-	}>;
+	comments: Comment[];
 	author: Author;
 };
 
@@ -55,10 +43,14 @@ export async function getOnePost(this: any, slug: string) {
     "publishedAt": publishedAt,
     "cover": cover.asset->url,
     "slug": slug.current,
-    "badge": badge[]->,
-    "content": content,
-    "likes": likes,
-    "comments": comments,
+		"badges": badges[]->{
+			"id": _id,
+			color,
+			name
+		},
+    "content",
+    "likes",
+    "comments",
     "author": author->{"id": _id, name, surname, "slug": slug.current, "image": image.asset->url}
   }`;
 

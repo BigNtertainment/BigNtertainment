@@ -1,5 +1,14 @@
 import { generateSlug } from "../utils/generate";
 
+export type Member = {
+	name: string;
+	surname: string;
+	image: string;
+	description: string;
+	personalPageLink: string;
+	slug: string;
+};
+
 const memberSchema = {
 	name: "member",
 	title: "Member",

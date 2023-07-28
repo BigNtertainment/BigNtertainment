@@ -1,3 +1,10 @@
+export type Comment = {
+	user: string;
+	content: string;
+	publishedAt: string;
+	likes: number;
+};
+
 const commentSchema = {
 	name: "comment",
 	title: "Comment",
@@ -6,7 +13,7 @@ const commentSchema = {
 		{
 			name: "user",
 			title: "User",
-			type: "string", // You can define a separate schema for users and reference it here
+			type: "string",
 		},
 		{
 			name: "content",
