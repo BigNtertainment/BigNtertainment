@@ -1,14 +1,20 @@
 import { groq } from "next-sanity";
 import { getAll, getOne } from "./factory";
+import { Badge } from "./badge";
+import { MarkdownBlock } from "@/types/TSanity";
 
 export type Game = {
 	id: string;
 	name: string;
-	surname: string;
-	personalPageLink: string;
+	badge: Badge;
+	likes: number;
 	description: string;
 	slug: string;
-	image: string;
+	cover: string;
+	gameplay: string[];
+	updatedAt: string;
+	gameLink: string;
+	content: MarkdownBlock;
 };
 
 export type GameQuery = {
@@ -20,12 +26,16 @@ export async function getAllGames(this: any) {
 	const query = groq`*[_type == "game"]{
 		"id": _id,
 		name,
-		badges,
+		"badges": badges[]->{
+			"id": _id,
+			color,
+			name
+		},
 		likes,
 		description,
 		"slug": slug.current,
 		"cover": cover.asset->url,
-		"gameplay": gameplay,
+		"gameplay": gameplay[].asset->url,
 		"updatedAt": _updatedAt,
      gameLink,
      content
@@ -40,12 +50,16 @@ export async function getOneGame(this: any, slug: string) {
 	const query = groq`*[_type == "game" && slug.current == $slug][0]{
 		"id": _id,
 		name,
-		badge,
+		"badges": badges[]->{
+			"id": _id,
+			color,
+			name
+		},
 		likes,
 		description,
 		"slug": slug.current,
 		"cover": cover.asset->url,
-		"gameplay": gameplay,
+		"gameplay": gameplay[].asset->url,
 		"updatedAt": _updatedAt,
      gameLink,
      content
