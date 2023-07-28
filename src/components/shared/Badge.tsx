@@ -32,10 +32,11 @@ const calculateColor = (color: BadgeColor): string => {
 const LinkBadge = (props: LinkProps & { name: string; color: BadgeColor }) => {
 	const { href, name, color, ...rest } = props;
 	return (
-		<Link href={href}>
-			<a className={cn(baseClassNames, calculateColor(color))} {...rest}>
-				{name}
-			</a>
+		<Link
+			href={href}
+			className={cn(baseClassNames, calculateColor(color))}
+			{...rest}>
+			{name}
 		</Link>
 	);
 };
