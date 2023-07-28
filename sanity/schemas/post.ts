@@ -13,7 +13,7 @@ const postSchema = {
 			title: "Published At",
 			type: "datetime",
 			options: {
-				default: () => new Date().toISOString(),
+				default: new Date().toISOString(),
 			},
 		},
 		{
