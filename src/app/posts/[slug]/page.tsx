@@ -20,8 +20,6 @@ const Post = async ({ params }: Props) => {
 		return notFound();
 	}
 
-	console.log(post);
-
 	//TODO: Add site map, comments, badges, next article
 
 	return (

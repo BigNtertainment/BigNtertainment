@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import { QueryParams, groq } from "next-sanity";
 import { getAll, getOne } from "./factory";
 import { Badge } from "./badge";
 import { MarkdownBlock } from "@/types/TSanity";
@@ -29,11 +29,12 @@ export type PostQuery = {
 	getOne: (slug: string) => Promise<Post | null>;
 };
 
-export async function getAllPosts(this: any) {
+export async function getAllPosts(this: any, params?: QueryParams) {
 	const query = groq`*[_type == "post"]`;
 
 	return getAll.call(this, {
 		query,
+		params,
 	});
 }
 
