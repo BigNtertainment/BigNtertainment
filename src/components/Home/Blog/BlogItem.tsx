@@ -3,6 +3,7 @@ import { Post } from "../../../../sanity/database/controller/post";
 import Link from "next/link";
 import Image from "next/image";
 import moment from "moment";
+import Badge from "@/components/shared/Badge";
 
 type Props = {
 	post: Post;
@@ -30,6 +31,16 @@ const BlogItem = ({ post }: Props) => {
 				<div className="text-4xl font-bold mb-6">{post.title}</div>
 			</div>
 			<div className="mx-8 opacity-80">{post.description}</div>
+			<div className=" mx-8 flex justify-between">
+				<div className="self-center flex gap-4">
+					{post.badges.map((badge) => (
+						<Badge key={badge.id} color={badge.color} name={badge.name} />
+					))}
+				</div>
+				<div className="self-center mb-4 text-left translate-y-1/4">
+					<span className="underline">Read More</span> &rarr;
+				</div>
+			</div>
 		</Link>
 	);
 };
