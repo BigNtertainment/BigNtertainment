@@ -6,7 +6,12 @@ import {
 } from "./controller/member";
 import { BadgeQuery, getAllBadges, getOneBadge } from "./controller/badge";
 import { GameQuery, getAllGames, getOneGame } from "./controller/games";
-import { PostQuery, getAllPosts, getOnePost } from "./controller/post";
+import {
+	PostQuery,
+	getAllPosts,
+	getOnePost,
+	getPostsByBadge,
+} from "./controller/post";
 import {
 	RecommendedCategoryQuery,
 	getAllRecommendedCategories,
@@ -49,6 +54,7 @@ class SanityDatabase {
 		this.posts = {
 			getAll: getAllPosts.bind(this),
 			getOne: getOnePost.bind(this),
+			getByBadge: getPostsByBadge.bind(this),
 		};
 
 		this.recommendedCategories = {

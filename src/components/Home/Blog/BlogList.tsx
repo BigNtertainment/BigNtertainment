@@ -60,22 +60,24 @@ const BlogList = ({ selectedCategory }: Props) => {
 			database.posts.getAll({ limit: 6 }).then((data) => setPosts(data));
 		} else {
 			database.posts
-				.getAll({ badgeName: selectedCategory, limit: 6 })
+				.getByBadge(selectedCategory, { limit: 6 })
 				.then((data) => setPosts(data));
 		}
 	}, [selectedCategory]);
 
-	if (!posts) {
+	console.log(posts);
+
+	if (posts?.length === 0) {
 		return (
-			<div className="grid grid-cols-3 mt-20 items-center gap-10 col-[center-start/center-end]">
-				No posts found!
+			<div className="my-20 mt-40 col-[center-start/center-end] font-bold text-center text-4xl">
+				No posts found
 			</div>
 		);
 	}
 
 	return (
 		<ul className="grid grid-cols-3 mt-20 items-center gap-10 col-[center-start/center-end]">
-			{posts.map((post) => (
+			{posts!.map((post) => (
 				<BlogItem key={post.slug} post={post} style="tile" />
 			))}
 		</ul>
