@@ -11,9 +11,7 @@ export const metadata = {
 
 const Page = () => {
 	return (
-		<main className="col-[center-start/center-end]">
-			<PostsList />
-		</main>
+		<main className="col-[center-start/center-end]">{/* <PostsList /> */}</main>
 	);
 };
 

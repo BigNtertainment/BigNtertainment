@@ -17,7 +17,7 @@ const BlogItem = ({ post }: Props) => {
 	return (
 		<Link
 			href={`/posts/${post.slug}`}
-			className="bg-white bg-opacity-5 w-full aspect-[2/3] rounded-xl grid grid-rows-5 overflow-hidden cursor-pointer hover:shadow-2xl transition hover:transition hover:scale-105 z-10 hover:z-0">
+			className="bg-white bg-opacity-5 w-full aspect-[2/3] max-w-[38rem] rounded-xl grid grid-rows-5 overflow-hidden cursor-pointer hover:shadow-2xl transition hover:transition hover:scale-105 z-10 hover:z-0">
 			<div className="row-[1/3] relative">
 				<Image src={post.cover} alt={`${post.title} Image`} fill={true} />
 			</div>

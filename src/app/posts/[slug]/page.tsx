@@ -20,7 +20,7 @@ const Post = async ({ params }: Props) => {
 		return notFound();
 	}
 
-	//TODO: Add site map, comments, badges, next article
+	//TODO: Add site map, comments, badges, next article, SEO
 
 	return (
 		<main className="col-[center-start/center-end] blog-post-markdown grid grid-cols-7 gap-x-10 my-8">

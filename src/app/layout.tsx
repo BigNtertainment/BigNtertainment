@@ -1,7 +1,5 @@
-import Navigation from "@/components/layout/Navigation/Navigation";
 import "./globals.css";
 import type { Metadata } from "next";
-import Footer from "@/components/layout/Footer";
 import LayoutProvider from "@/components/layout/LayoutProvider";
 
 export const metadata: Metadata = {

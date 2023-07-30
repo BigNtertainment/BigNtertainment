@@ -9,7 +9,6 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@notionhq/client": "^2.2.8",
 		"@prisma/client": "^5.0.0",
 		"@sanity/block-content-to-markdown": "^0.0.5",
 		"@sanity/block-content-to-react": "^3.0.0",
@@ -26,7 +25,6 @@
 		"moment": "^2.29.4",
 		"next": "13.4.10",
 		"next-sanity": "^5.1.2",
-		"notion-to-md": "^3.1.1",
 		"postcss": "8.4.26",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
