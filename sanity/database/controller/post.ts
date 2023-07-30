@@ -25,12 +25,32 @@ export type Post = {
 };
 
 export type PostQuery = {
-	getAll: () => Promise<Post[] | null>;
+	getAll: (params?: QueryParams) => Promise<Post[] | null>;
 	getOne: (slug: string) => Promise<Post | null>;
 };
 
 export async function getAllPosts(this: any, params?: QueryParams) {
-	const query = groq`*[_type == "post"]`;
+	const query = groq`*[_type == "post"]{
+		"cover": cover.asset->url,
+		title,
+		"badges": badges[]->{
+			"id": _id,
+			name,
+			color
+		},
+		content,
+		likes,
+		"slug": slug.current,
+		publishedAt,
+		comments,
+		"author": author->{
+			"id": _id,
+			name,
+			surname,
+			"slug": slug.current,
+			"image": image.asset->url
+		}
+	}`;
 
 	return getAll.call(this, {
 		query,
