@@ -6,10 +6,10 @@ type Props = {
 };
 
 const Page = async ({ params }: Props) => {
-	const database = new SanityDatabase();
-	const game = await database.games.getOne(params.slug);
+	// const database = new SanityDatabase();
+	// const game = await database.games.getOne(params.slug);
 
-	console.log(game);
+	// console.log(game);
 
 	return <div>Page</div>;
 };
