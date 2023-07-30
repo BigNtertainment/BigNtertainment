@@ -22,6 +22,7 @@ export type Post = {
 	likes: number;
 	comments: Comment[];
 	author: Author;
+	description: string;
 };
 
 export type PostQuery = {
@@ -30,27 +31,30 @@ export type PostQuery = {
 };
 
 export async function getAllPosts(this: any, params?: QueryParams) {
-	const query = groq`*[_type == "post"]{
-		"cover": cover.asset->url,
-		title,
-		"badges": badges[]->{
-			"id": _id,
-			name,
-			color
-		},
-		content,
-		likes,
-		"slug": slug.current,
-		publishedAt,
-		comments,
-		"author": author->{
-			"id": _id,
-			name,
-			surname,
-			"slug": slug.current,
-			"image": image.asset->url
-		}
-	}`;
+	const query = groq`*[_type == "post" ${
+		params?.badgeName ? `&& badges[]->name == "${params.badgeName}"` : ""
+	}]{
+    "cover": cover.asset->url,
+    title,
+    "badges": badges[]->{
+      "id": _id,
+      name,
+      color
+    },
+		description,
+    content,
+    likes,
+    "slug": slug.current,
+    publishedAt,
+    comments,
+    "author": author->{
+      "id": _id,
+      name,
+      surname,
+      "slug": slug.current,
+      "image": image.asset->url
+    }
+  }`;
 
 	return getAll.call(this, {
 		query,
@@ -69,6 +73,7 @@ export async function getOnePost(this: any, slug: string) {
 		},
 		content,
 		likes,
+		description,
 		"slug": slug.current,
 		publishedAt,
 		comments,

@@ -9,6 +9,11 @@ const postSchema = {
 			type: "string",
 		},
 		{
+			name: "description",
+			title: "Description",
+			type: "string",
+		},
+		{
 			name: "publishedAt",
 			title: "Published At",
 			type: "datetime",

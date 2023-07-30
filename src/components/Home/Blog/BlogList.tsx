@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SanityDatabase from "../../../../sanity/database";
 import { Post } from "../../../../sanity/database/controller/post";
+import BlogItem from "./BlogItem";
 
 // import React, { useState } from "react";
 // import BlogControlls from "./BlogControlls";
@@ -59,13 +60,26 @@ const BlogList = ({ selectedCategory }: Props) => {
 			database.posts.getAll({ limit: 6 }).then((data) => setPosts(data));
 		} else {
 			database.posts
-				.getAll({ badge: selectedCategory })
+				.getAll({ badgeName: selectedCategory, limit: 6 })
 				.then((data) => setPosts(data));
 		}
 	}, [selectedCategory]);
 
-	console.log(posts);
-	return <ul></ul>;
+	if (!posts) {
+		return (
+			<div className="grid grid-cols-3 mt-20 items-center gap-10 col-[center-start/center-end]">
+				No posts found!
+			</div>
+		);
+	}
+
+	return (
+		<ul className="grid grid-cols-3 mt-20 items-center gap-10 col-[center-start/center-end]">
+			{posts.map((post) => (
+				<BlogItem key={post.slug} post={post} style="tile" />
+			))}
+		</ul>
+	);
 };
 
 export default BlogList;
