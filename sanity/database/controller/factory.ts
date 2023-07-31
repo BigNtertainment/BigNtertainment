@@ -14,14 +14,8 @@ export async function getAll(
 	{ query, params, options = { filterResponse: true }, cb }: factoryQuery
 ) {
 	const client = this.client as SanityClient;
-	const data = await client.fetch(
-		paginate(query, {
-			limit: params?.limit,
-			page: params?.page,
-		}),
-		params,
-		options
-	);
+
+	const data = await client.fetch(query, params, options);
 
 	if (!data) {
 		return null;
