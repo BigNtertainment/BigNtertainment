@@ -1,4 +1,4 @@
-import { generateSlug } from "../utils/generate";
+import { generateSlug } from "../utils/dbUtils";
 
 export type Member = {
 	name: string;

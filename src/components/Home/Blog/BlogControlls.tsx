@@ -26,8 +26,12 @@ const BlogControlls = ({ selectedCategory, setSelectedCategory }: Props) => {
 			return;
 		}
 
+		if (!data[0]) {
+			return;
+		}
+
 		setOptions(
-			data[0].badges.map((badge) => {
+			data[0].badges?.map((badge) => {
 				return badge.name;
 			})
 		);

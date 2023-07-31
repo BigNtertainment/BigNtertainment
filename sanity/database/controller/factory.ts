@@ -1,5 +1,6 @@
 import { FilteredResponseQueryOptions, QueryParams } from "next-sanity";
 import { SanityClient } from "sanity";
+import { paginate } from "../../utils/dbUtils";
 
 export type factoryQuery = {
 	query: string;
@@ -13,7 +14,14 @@ export async function getAll(
 	{ query, params, options = { filterResponse: true }, cb }: factoryQuery
 ) {
 	const client = this.client as SanityClient;
-	const data = await client.fetch(query, params, options);
+	const data = await client.fetch(
+		paginate(query, {
+			limit: params?.limit,
+			page: params?.page,
+		}),
+		params,
+		options
+	);
 
 	if (!data) {
 		return null;
