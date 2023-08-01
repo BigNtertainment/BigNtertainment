@@ -11,7 +11,7 @@ const PostsList = async () => {
 	}
 
 	return (
-		<div className="py-10 max-w-6xl flex justify-center mx-auto mt-10 gap-10 flex-col">
+		<div className="py-10 max-w-[90rem]  flex justify-center mx-auto mt-10 gap-10 flex-col">
 			{posts.map((post) => (
 				<BlogItem key={post.slug} style="sripe" post={post} />
 			))}

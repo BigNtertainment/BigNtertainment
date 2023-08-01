@@ -19,7 +19,7 @@ const StripeItem = ({ post }: { post: Post }) => {
 	return (
 		<Link
 			href={`/posts/${post.slug}`}
-			className="w-full grid grid-cols-5 transition hover:transition hover:scale-105">
+			className="w-full grid grid-cols-5 transition hover:transition hover:scale-105 ">
 			<div className="relative h-full col-[1/3] z-10">
 				<Image
 					src={post.cover}
