@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import { QueryParams, groq } from "next-sanity";
 import { getAll, getOne } from "./factory";
 import { Badge } from "./badge";
 import { MarkdownBlock } from "@/types/TSanity";
@@ -18,12 +18,12 @@ export type Game = {
 };
 
 export type GameQuery = {
-	getAll: () => Promise<Game[] | null>;
+	getAll: (params?: QueryParams) => Promise<Game[] | null>;
 	getOne: (slug: string) => Promise<Game | null>;
 };
 
-export async function getAllGames(this: any) {
-	const query = groq`*[_type == "game"]{
+export async function getAllGames(this: any, params?: QueryParams) {
+	const query = groq`*[_type == "game"][0...${params?.limit || 10}]{
 		"id": _id,
 		name,
 		"badges": badges[]->{

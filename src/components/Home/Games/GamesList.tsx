@@ -1,16 +1,22 @@
-import React from "react";
-import Game from "./Game";
-// import prisma from "../../../../prisma/client";
+import SanityDatabase from "../../../../sanity/database";
+import GameItem from "./GameItem";
+
+const database = new SanityDatabase();
 
 const GamesList = async () => {
-	// const games = await prisma.game.findMany();
-	// return (
-	// <div className="grid grid-cols-3 gap-10">
-	// 	{games.map((game) => (
-	// 		<Game key={game.id} name={game.name} img={game.icon} slug={game.slug} />
-	// 	))}
-	// </div>
-	// );
+	const games = await database.games.getAll({ limit: 6 });
+
+	if (!games) {
+		return <div className="text-4xl text-center">No games.</div>;
+	}
+
+	return (
+		<div className="grid grid-cols-3">
+			{games.map((game) => (
+				<GameItem key={game.id} game={game} />
+			))}
+		</div>
+	);
 };
 
 export default GamesList;

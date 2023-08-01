@@ -16,9 +16,7 @@ const Game = ({ name, img, slug }: Props) => {
 			<div className="z-40 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-white transition font-bold">
 				{name}
 			</div>
-			{/* <span className="z-40 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 text-white text-2xl">
-				Oficjalna Strona
-			</span> */}
+
 			<Image
 				src={img}
 				fill={true}
