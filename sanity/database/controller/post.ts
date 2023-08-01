@@ -110,6 +110,7 @@ export async function getPostsByBadge(
       },
       content,
       likes,
+			description,
       "slug": slug.current,
       publishedAt,
       comments,

@@ -5,10 +5,13 @@ type Props = {
 	size: "sm" | "md" | "xl";
 };
 
-const Heading = (props: Props & React.HTMLAttributes<HTMLHeadElement>) => {
+const Heading = ({
+	className,
+	...props
+}: Props & React.HTMLAttributes<HTMLHeadElement>) => {
 	let size = "";
 
-	switch (size) {
+	switch (props.size) {
 		case "sm":
 			size = "text-2xl";
 			break;
@@ -23,9 +26,7 @@ const Heading = (props: Props & React.HTMLAttributes<HTMLHeadElement>) => {
 	}
 
 	return (
-		<h3
-			className={cn(`${size} font-bold text-center`, props.className)}
-			{...props}>
+		<h3 className={cn(`font-bold text-center`, size, className)} {...props}>
 			{props.children}
 		</h3>
 	);

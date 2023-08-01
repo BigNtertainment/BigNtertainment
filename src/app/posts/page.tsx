@@ -1,5 +1,5 @@
 import PostsList from "@/components/Posts/PostsList";
-import React from "react";
+import Heading from "@/components/shared/Heading";
 
 export const metadata = {
 	title: "Posts",
@@ -12,7 +12,10 @@ export const metadata = {
 const Page = () => {
 	return (
 		<main className="col-[center-start/center-end]">
-			<h3>Posts</h3>
+			<Heading className="mt-20" size="xl">
+				Posts
+			</Heading>
+			<PostsList />
 		</main>
 	);
 };
