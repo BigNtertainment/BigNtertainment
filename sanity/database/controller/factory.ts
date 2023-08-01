@@ -1,6 +1,5 @@
 import { FilteredResponseQueryOptions, QueryParams } from "next-sanity";
 import { SanityClient } from "sanity";
-import { paginate } from "../../utils/dbUtils";
 
 export type factoryQuery = {
 	query: string;
