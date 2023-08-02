@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
 	return (
-		<div className="grid col-[full-start/full-end] relative grid-cols-[minmax(6rem,1fr)_repeat(8,minmax(min-content,14rem))_minmax(6rem,1fr)_]  pb-20 mx-4 pt-10 footer">
+		<div className="grid col-[full-start/full-end] relative grid-cols-defaultLayout  pb-20 mx-4 pt-10 footer">
 			<div className="col-[2/-2] flex justify-center mt-16 mb-32">
 				<Logo width={100} height={100} className="opacity-20" />
 			</div>
