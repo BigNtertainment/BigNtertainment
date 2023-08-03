@@ -4,6 +4,8 @@ import Image from "next/image";
 import EmptyPage from "@/components/shared/EmptyPage";
 import Heading from "@/components/shared/Heading";
 import Btn from "@/components/shared/LinkButton";
+import Slider from "@/components/Game/Slider";
+import BlockContent from "@sanity/block-content-to-react";
 
 type Props = {
 	params: { slug: string };
@@ -14,20 +16,21 @@ const database = new SanityDatabase();
 const Page = async ({ params }: Props) => {
 	const game = await database.games.getOne(params.slug);
 
-	console.log(game);
-
 	if (!game) {
 		return <EmptyPage>Game not found!</EmptyPage>;
 	}
 
+	const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+	const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
+
 	return (
 		<main className="grid col-[center-start/center-end] mt-32">
 			<section className="flex justify-between gap-12">
-				<header className="flex flex-col gap-14 justify-between max-h-[24rem]">
+				<header className="flex flex-col  justify-between max-h-[24rem]">
 					<Heading size="xl" className="text-left">
 						{game.name}
 					</Heading>
-					<Heading size="sm" className="text-left max-w-4xl">
+					<Heading size="sm" className="text-left max-w-4xl text-dark-highlight ">
 						{game.description}
 					</Heading>
 					<Btn
@@ -45,8 +48,14 @@ const Page = async ({ params }: Props) => {
 					/>
 				</div>
 			</section>
-			<div></div>
-			<article></article>
+			<Slider className="mt-36 h-[45rem]" images={game.gameplay} />
+			<article className="py-32">
+				<BlockContent
+					blocks={game.content}
+					projectId={projectId}
+					dataset={dataset}
+				/>
+			</article>
 		</main>
 	);
 };
