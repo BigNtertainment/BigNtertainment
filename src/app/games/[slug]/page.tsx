@@ -48,8 +48,9 @@ const Page = async ({ params }: Props) => {
 					/>
 				</div>
 			</section>
-			<Slider className="mt-36 h-[45rem]" images={game.gameplay} />
+			<Slider className="mt-32 h-[45rem]" images={game.gameplay} />
 			<article className="py-32">
+				<h3 className="text-5xl mb-10 font-bold">Game Information &rarr;</h3>
 				<BlockContent
 					blocks={game.content}
 					projectId={projectId}
