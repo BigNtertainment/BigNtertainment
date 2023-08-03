@@ -1,3 +1,4 @@
+import pagesSchema from "./pages";
 import badgeSchema from "./badge";
 import commentSchema from "./comment";
 import gameSchema from "./game";
@@ -16,4 +17,5 @@ export const schemaTypes = [
 	recommendedGamesSchema,
 	recommendedCategoriesSchema,
 	memberSchema,
+	pagesSchema,
 ];
