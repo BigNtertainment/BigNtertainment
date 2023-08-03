@@ -16,7 +16,7 @@ const MemberComponent = ({ member }: Props) => {
 					src={member.image}
 					fill={true}
 					alt={`${member.name} image`}
-					className="object-cover rounded-full"
+					className="object-cover rounded-2xl"
 				/>
 			</div>
 			<div className="py-4">
