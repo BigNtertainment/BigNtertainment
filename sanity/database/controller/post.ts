@@ -56,7 +56,6 @@ export async function getAllPosts(this: any, params?: QueryParams) {
       "slug": slug.current,
       "image": image.asset->url
     },
-		"test": badges[]->name
   }`;
 
 	return getAll.call(this, {

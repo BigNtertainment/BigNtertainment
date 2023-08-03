@@ -17,6 +17,7 @@ import {
 	getAllRecommendedCategories,
 } from "./controller/recomendedCategories";
 import { SliderQuery, getAllSlides } from "./controller/slider";
+import { PageQuery, getOnePage } from "./controller/page";
 
 class SanityDatabase {
 	private client: SanityClient;
@@ -27,6 +28,7 @@ class SanityDatabase {
 	posts: PostQuery;
 	recommendedCategories: RecommendedCategoryQuery;
 	slider: SliderQuery;
+	page: PageQuery;
 
 	constructor() {
 		this.client = createClient({
@@ -63,6 +65,10 @@ class SanityDatabase {
 
 		this.slider = {
 			getAll: getAllSlides.bind(this),
+		};
+
+		this.page = {
+			getOne: getOnePage.bind(this),
 		};
 	}
 }
