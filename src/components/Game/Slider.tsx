@@ -9,8 +9,6 @@ type Props = {
 };
 
 const Slider = ({ images, className }: Props) => {
-	console.log(images);
-
 	return (
 		<div className={cn("rounded-3xl overflow-hidden z-40", className)}>
 			<Slide

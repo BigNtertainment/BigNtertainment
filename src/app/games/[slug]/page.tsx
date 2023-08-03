@@ -30,7 +30,9 @@ const Page = async ({ params }: Props) => {
 					<Heading size="xl" className="text-left">
 						{game.name}
 					</Heading>
-					<Heading size="sm" className="text-left max-w-4xl text-dark-highlight ">
+					<Heading
+						size="sm"
+						className="text-left max-w-4xl text-dark-highlight -mt-10">
 						{game.description}
 					</Heading>
 					<Btn
