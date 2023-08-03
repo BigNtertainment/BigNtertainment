@@ -20,7 +20,7 @@ const Slider = ({ images, className }: Props) => {
 				{images.map((slide, index) => (
 					<div key={index} className="h-full ">
 						<div
-							className="h-full bg-cover mx-10 -ml-10"
+							className="h-full bg-cover mx-10 pl-5"
 							style={{
 								backgroundImage: `url(${slide})`,
 							}}></div>
