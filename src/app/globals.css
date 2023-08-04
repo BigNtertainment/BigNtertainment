@@ -33,7 +33,6 @@
 }
 
 html {
-	font-size: 62.5%;
 	box-sizing: border-box;
 }
 
@@ -59,11 +58,17 @@ html {
 	}
 }
 
+.hover\:nav-hover-expand:hover > div:nth-child(1) {
+	transform: translateY(-2px);
+}
+.hover\:nav-hover-expand:hover > div:nth-child(3) {
+	transform: translateY(2px);
+}
+
 @layer base {
 	.body {
 		font-family: "Roboto", sans-serif;
 		font-weight: 300;
-		font-size: 1.6rem;
 		line-height: 1.6;
 		@apply text-dark-primary bg-dark-primary grid  grid-cols-defaultLayout min-h-screen;
 		grid-template-rows: min-content 1fr min-content;
