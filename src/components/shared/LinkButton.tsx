@@ -13,7 +13,7 @@ const Btn = ({ className, href, ...props }: Props) => {
 		<Link
 			href={href}
 			className={cn(
-				"mt-16 mx-auto bg-dark-neon-green px-9 py-4 rounded-full  text-light-primary transition hover:-translate-y-1 shadow-md hover:transition",
+				"mt-16 mx-auto bg-dark-neon-green px-6 py-3 rounded-full  text-light-primary transition hover:-translate-y-1 shadow-md hover:transition",
 				className
 			)}
 			{...props}>
