@@ -5,7 +5,7 @@ import Reviews from "@/components/Home/Rewiews/Reviews";
 
 export default async function Home() {
 	return (
-		<main className="pt-1 px-4 grid grid-rows-[75vh_repeat(5,min-content)] grid-cols-defaultLayout col-[full-start/full-end]">
+		<main className="grid grid-rows-[75vh_repeat(5,min-content)] grid-cols-defaultLayout col-[full-start/full-end] lg:px-4 lg:pt-1">
 			<Header />
 			<Games />
 			<Blog />

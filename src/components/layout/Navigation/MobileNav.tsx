@@ -10,7 +10,7 @@ const Nav = () => {
 		<div className="fixed lg:hidden right-0 z-30 bg-dark-primary top-0 h-screen">
 			<div className="h-full w-full flex items-center justify-center">
 				<NavLinks className="flex-col gap-12 w-screen text-2xl">
-					<NavAuth className="" childrenClassName="border-none" />
+					<NavAuth childrenClassName="border-none underline" />
 				</NavLinks>
 			</div>
 		</div>
