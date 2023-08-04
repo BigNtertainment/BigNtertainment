@@ -14,8 +14,6 @@ const Slideshow = () => {
 
 	const { breakPoint } = useWindowDimensions();
 
-	console.log(breakPoint);
-
 	const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 	const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
@@ -58,11 +56,13 @@ const Slideshow = () => {
 											projectId={projectId}
 											dataset={dataset}
 										/>
-										<Btn
-											className="mx-0 mt-0 -translate-y-32 self-start hover:-translate-y-32 no-underline text-lg"
-											href="/xd">
-											Lmao
-										</Btn>
+										{slide.link && (
+											<Btn
+												className="mx-0 mt-0 -translate-y-32 self-start hover:-translate-y-32 no-underline text-lg"
+												href={slide.link}>
+												{slide.linkCaption}
+											</Btn>
+										)}
 									</div>
 								</div>
 							</div>

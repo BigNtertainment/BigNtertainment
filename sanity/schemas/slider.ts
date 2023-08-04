@@ -40,6 +40,16 @@ const sliderSchema = {
 			title: "Image",
 			type: "image",
 		},
+		{
+			name: "link",
+			title: "Link",
+			type: "url",
+		},
+		{
+			name: "linkCaption",
+			title: "Link Caption",
+			type: "string",
+		},
 	],
 };
 

@@ -1,9 +1,12 @@
 import { groq } from "next-sanity";
 import { getAll } from "./factory";
+import { MarkdownBlock } from "@/types/TSanity";
 
 export type Slider = {
 	image: string;
-	text: any;
+	text: MarkdownBlock;
+	link: string;
+	linkCaption: string;
 };
 
 export type SliderQuery = {
@@ -13,7 +16,9 @@ export type SliderQuery = {
 export async function getAllSlides(this: any) {
 	const query = groq`*[_type == "slider"]{
     text,
-		"image": image.asset->url
+		"image": image.asset->url,
+		link,
+		linkCaption
   }`;
 
 	return getAll.call(this, {
