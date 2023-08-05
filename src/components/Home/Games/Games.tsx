@@ -5,7 +5,7 @@ import Heading from "@/components/shared/Heading";
 
 const Games = () => {
 	return (
-		<section className="col-[center-start/center-end] my-36 grid">
+		<section className="col-[center-start/center-end] my-24  grid">
 			<Heading animated={true} size="4xl">
 				Our Games
 			</Heading>

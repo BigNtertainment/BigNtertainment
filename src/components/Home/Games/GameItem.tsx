@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Game } from "../../../../sanity/database/controller/games";
 import Link from "next/link";
+import Heading from "@/components/shared/Heading";
 
 type Props = {
 	game: Game;
@@ -32,9 +33,11 @@ const GameItem = ({ game }: Props) => {
 		<Link
 			href={`/games/${game.slug}`}
 			className="opacity-90 aspect-square w-full rounded-2xl relative transition hover:transition after:transition hover:after:transition after:rounded-xl overflow-hidden after:bg-black after:opacity-30 after:absolute after:w-full after:h-full after:top-0  hover:after:opacity-90 hover:after:bg-defaultGradient game-panel">
-			<div className="z-40 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-white transition font-bold">
+			<Heading
+				className="z-40 absCenter transition px-4 py-3 opacity-0 w-full"
+				size="3xl">
 				{game.name}
-			</div>
+			</Heading>
 			<Image
 				src={game.cover}
 				fill={true}

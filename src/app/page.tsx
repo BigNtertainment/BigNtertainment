@@ -9,7 +9,7 @@ export default async function Home() {
 			<Header />
 			<Games />
 			<Blog />
-			<Reviews />
+			{/* <Reviews /> */}
 		</main>
 	);
 }
