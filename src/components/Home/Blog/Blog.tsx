@@ -10,7 +10,7 @@ const Blog = () => {
 	const [selectedCategory, setSelectedCategory] = useState("");
 
 	return (
-		<section className="col-[full-start/full-end] mt-16 grid grid-cols-defaultLayout mb-20">
+		<section className="col-[full-start/full-end] mt-16 grid gridLayout mb-20">
 			<Heading
 				animated={true}
 				size="4xl"

@@ -7,8 +7,8 @@ const ClassicNav = () => {
 	return (
 		<>
 			<div className="h-full flex gap-3 ">
-				<div className="relative h-full aspect-square ">
-					<Logo className="opacity-60" height={48} width={48} />
+				<div className="relative h-full aspect-square w-9 lg:w-12 ">
+					<Logo className="opacity-60" fill={true} />
 				</div>
 
 				<NavLinks className={"hidden lg:flex"} />
