@@ -14,12 +14,12 @@ const Page = async () => {
 	}
 
 	return (
-		<div className="col-[center-start/center-end] pb-20">
-			<Heading size="xl" className="my-14 mb-20">
+		<div className="col-[center-start/center-end] grid pb-10 lg:pb-20">
+			<Heading animated={true} size="4xl" className="mx-auto my-10">
 				Our Games
 			</Heading>
 
-			<div className="grid grid-cols-3">
+			<div className="list-grid ">
 				{games.map((game) => (
 					<GameItem key={game.id} game={game} />
 				))}
