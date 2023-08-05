@@ -12,9 +12,9 @@ const Page = async () => {
 	const page = await database.page.getOne("about");
 
 	return (
-		<main className="col-[center-start/center-end] py-10">
+		<main className="col-[center-start/center-end] py-10 pb-12 lg:pb-16">
 			<section>
-				<article className="my-10 mb-14">
+				<article className="my-10 mb-16 prose prose-base prose-invert">
 					<BlockContent
 						blocks={page?.content}
 						projectId={projectId}
@@ -22,13 +22,13 @@ const Page = async () => {
 					/>
 				</article>
 			</section>
-			<section>
+			<section className="flex flex-col justify-center">
 				<Heading
-					size="md"
-					className="translate-y-1/2 mb-1 bg-dark-primary px-3 pl-1 z-10 inline-block mx-auto">
+					size="4xl"
+					animated={true}
+					className="bg-dark-primary px-3 pl-1 mx-auto mb-8 lg:mb-10">
 					Our team
 				</Heading>
-				<hr className="mb-12" />
 				<TeamList />
 			</section>
 		</main>

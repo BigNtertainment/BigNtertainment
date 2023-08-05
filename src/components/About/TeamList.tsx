@@ -19,7 +19,7 @@ const TeamList = async ({ className }: Props) => {
 	return (
 		<div
 			className={cn(
-				"grid  grid-cols-[repeat(auto-fit,minmax(10rem,1fr))]",
+				"grid gap-3 grid-cols-[repeat(auto-fit,minmax(15rem,1fr)] sm:grid-cols-[repeat(auto-fit,minmax(15rem,17rem))]",
 				className
 			)}>
 			{members.map((member) => (
