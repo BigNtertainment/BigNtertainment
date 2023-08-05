@@ -31,13 +31,12 @@ export default function useWindowDimensions() {
 	useEffect(() => {
 		const { width } = windowDimensions;
 
-		if (width > 640) {
+		if (width <= 768) {
 			setBreakPoint("sm");
 		}
 		if (width > 768) {
 			setBreakPoint("md");
 		}
-
 		if (width > 865) {
 			setBreakPoint("lg");
 		}
