@@ -56,27 +56,29 @@ const TileItem = ({ post }: { post: Post }) => {
 	return (
 		<Link
 			href={`/posts/${post.slug}`}
-			className="bg-white bg-opacity-5 w-full aspect-[2/3] max-w-[38rem] rounded-xl grid grid-rows-5 overflow-hidden cursor-pointer hover:shadow-2xl transition hover:transition hover:scale-105 z-10 hover:z-0">
+			className="bg-white bg-opacity-5  aspect-[2/3] rounded-xl grid grid-rows-5 overflow-hidden cursor-pointer hover:shadow-xl transition hover:transition hover:-translate-y-1 z-10 hover:z-0">
 			<div className="row-[1/3] relative">
 				<Image src={post.cover} alt={`${post.title} Image`} fill={true} />
 			</div>
-			<div className="mt-8 mx-8 flex flex-col justify-between">
-				<div className="flex gap-5 text2xl">
+			<div className="mt-5 mx-5 flex flex-col justify-between">
+				<div className="flex gap-4 text-base items-center">
 					<div>
-						<span className="text-badge-red font-bold">BigNtertainment </span>
+						<span className="text-badge-red font-bold">
+							{post.author.name} {post.author.surname}
+						</span>
 					</div>
-					<div className="opacity-75">{date}</div>
+					<div className="opacity-75 text-sm ">{date}</div>
 				</div>
-				<div className="text-4xl font-bold mb-6">{post.title}</div>
+				<div className="text-2xl font-bold mb-3">{post.title}</div>
 			</div>
-			<div className="mx-8 opacity-80">{post.description}</div>
-			<div className=" mx-8 flex justify-between">
-				<div className="self-center flex gap-4">
+			<div className="mx-5 opacity-80 -translate-y-1">{post.description}</div>
+			<div className=" mx-5 flex justify-between">
+				<div className="self-center flex gap-3">
 					{post.badges.map((badge) => (
 						<Badge key={badge.id} color={badge.color} name={badge.name} />
 					))}
 				</div>
-				<div className="self-center mb-4 text-left translate-y-1/4">
+				<div className="self-center mb-3 text-left translate-y-1/4">
 					<span className="underline">Read More</span> &rarr;
 				</div>
 			</div>
