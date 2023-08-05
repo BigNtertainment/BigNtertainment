@@ -45,7 +45,7 @@ const Slideshow = () => {
 					return (
 						<div key={index} className="h-full ">
 							<div
-								className="h-full bg-cover grid lg:grid-cols-2"
+								className="h-full grid lg:grid-cols-2 bg-fixed bg-center bg-no-repeat bg-cover"
 								style={{
 									backgroundImage,
 								}}>

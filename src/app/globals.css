@@ -57,7 +57,7 @@ html {
 		content: "";
 	}
 
-	.listGrid {
+	.list-grid {
 		@apply grid justify-center gap-10 grid-cols-[repeat(auto-fit,minmax(min-content,350px))];
 	}
 	.absCenter {

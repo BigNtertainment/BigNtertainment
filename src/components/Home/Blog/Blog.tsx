@@ -4,15 +4,19 @@ import { useState } from "react";
 import BlogList from "./BlogList";
 import BlogControlls from "./BlogControlls";
 import Btn from "@/components/shared/LinkButton";
+import Heading from "@/components/shared/Heading";
 
 const Blog = () => {
 	const [selectedCategory, setSelectedCategory] = useState("");
 
 	return (
-		<section className="col-[full-start/full-end] mt-16 grid grid-cols-defaultLayout">
-			<h3 className="text-6xl font-bold text-center mb-20 col-[full-start/full-end]">
+		<section className="col-[full-start/full-end] mt-16 grid grid-cols-defaultLayout mb-20">
+			<Heading
+				animated={true}
+				size="4xl"
+				className="col-[center-start/center-end] mb-14">
 				Updates
-			</h3>
+			</Heading>
 			<BlogControlls
 				selectedCategory={selectedCategory}
 				setSelectedCategory={setSelectedCategory}

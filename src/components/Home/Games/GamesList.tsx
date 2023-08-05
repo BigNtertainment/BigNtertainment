@@ -12,7 +12,7 @@ const GamesList = async () => {
 	}
 
 	return (
-		<div className="listGrid mt-20 mb-4">
+		<div className="list-grid mt-14 mb-4">
 			{games.map((game) => (
 				<GameItem key={game.id} game={game} />
 			))}
