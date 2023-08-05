@@ -6,6 +6,7 @@ import Heading from "@/components/shared/Heading";
 import Btn from "@/components/shared/LinkButton";
 import Slider from "@/components/Game/Slider";
 import BlockContent from "@sanity/block-content-to-react";
+import MarkdownBlock from "@/components/shared/MarkdownBlock";
 
 type Props = {
 	params: { slug: string };
@@ -19,9 +20,6 @@ const Page = async ({ params }: Props) => {
 	if (!game) {
 		return <EmptyPage>Game not found!</EmptyPage>;
 	}
-
-	const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-	const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 	return (
 		<main className="grid col-[center-start/center-end] mt-32">
@@ -53,11 +51,7 @@ const Page = async ({ params }: Props) => {
 			<Slider className="mt-32 h-[45rem]" images={game.gameplay} />
 			<article className="py-32">
 				<h3 className="text-5xl mb-10 font-bold">Game Information &rarr;</h3>
-				<BlockContent
-					blocks={game.content}
-					projectId={projectId}
-					dataset={dataset}
-				/>
+				<MarkdownBlock markdown={game.content} />
 			</article>
 		</main>
 	);

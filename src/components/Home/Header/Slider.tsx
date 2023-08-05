@@ -8,14 +8,12 @@ import { Slider } from "../../../../sanity/database/controller/slider";
 import BlockContent from "@sanity/block-content-to-react";
 import useWindowDimensions from "@/hooks/useWindowDimensions";
 import Btn from "@/components/shared/LinkButton";
+import MarkdownBlock from "@/components/shared/MarkdownBlock";
 
 const Slideshow = () => {
 	const { data } = useSWR("/api/slider", fetcher);
 
 	const { breakPoint } = useWindowDimensions();
-
-	const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
-	const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 	const slides = data?.data as Slider[];
 
@@ -51,11 +49,7 @@ const Slideshow = () => {
 								}}>
 								<div>
 									<div className="uppercase flex flex-col h-full flex-1 ml-14 py-10 prose  prose-invert prose-2xl break-words relative">
-										<BlockContent
-											blocks={slide.text}
-											projectId={projectId}
-											dataset={dataset}
-										/>
+										<MarkdownBlock markdown={slide.text} />
 										{slide.link && (
 											<Btn
 												className="mx-0 mt-0 -translate-y-32 self-start hover:-translate-y-32 no-underline text-lg"
