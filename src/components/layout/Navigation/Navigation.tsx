@@ -1,9 +1,5 @@
-import Logo from "../../shared/Logo";
 import ClassicNav from "./ClassicNav";
 import MobileNav from "./MobileNav";
-import NavAuth from "./NavAuth";
-import NavLinks from "./NavLinks";
-import NavTheme from "./NavTheme";
 
 const Navigation = () => {
 	return (

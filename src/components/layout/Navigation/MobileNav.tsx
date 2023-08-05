@@ -1,9 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/utils/tailwind";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavLinks from "./NavLinks";
 import NavAuth from "./NavAuth";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
 	return (
@@ -18,11 +19,17 @@ const Nav = () => {
 };
 
 const MobileNav = () => {
+	const pathname = usePathname();
+
 	const [isActive, setIsActive] = useState(false);
 
 	const toggleActive = () => {
 		setIsActive((prevState) => !prevState);
 	};
+
+	useEffect(() => {
+		setIsActive(false);
+	}, [pathname]);
 
 	return (
 		<>
