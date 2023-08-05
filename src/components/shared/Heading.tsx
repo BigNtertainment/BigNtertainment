@@ -2,31 +2,36 @@ import { cn } from "@/lib/utils/tailwind";
 
 type Props = {
 	children: React.ReactNode;
-	size: "sm" | "md" | "xl";
+	size:
+		| "xs"
+		| "sm"
+		| "base"
+		| "lg"
+		| "xl"
+		| "2xl"
+		| "3xl"
+		| "4xl"
+		| "5xl"
+		| "6xl"
+		| "7xl"
+		| "8xl"
+		| "9xl";
+	animated: boolean;
 };
 
 const Heading = ({
 	className,
+	animated,
 	...props
 }: Props & React.HTMLAttributes<HTMLHeadElement>) => {
-	let size = "";
-
-	switch (props.size) {
-		case "sm":
-			size = "text-2xl";
-			break;
-		case "md":
-			size = "text-4xl";
-			break;
-		case "xl":
-			size = "text-6xl";
-			break;
-		default:
-			size = "text-xl";
-	}
-
 	return (
-		<h3 className={cn(`font-bold text-center`, size, className)} {...props}>
+		<h3
+			className={cn(
+				`font-bold text-center transition`,
+				animated ? "hover:transition hover:skew-y-2 skew-x-12 scale-105" : "",
+				className
+			)}
+			{...props}>
 			{props.children}
 		</h3>
 	);
