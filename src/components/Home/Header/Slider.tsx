@@ -9,6 +9,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import useWindowDimensions from "@/hooks/useWindowDimensions";
 import Btn from "@/components/shared/LinkButton";
 import MarkdownBlock from "@/components/shared/MarkdownBlock";
+import Spinner from "@/components/shared/Spinner";
 
 const Slideshow = () => {
 	const { data } = useSWR("/api/slider", fetcher);
@@ -18,7 +19,11 @@ const Slideshow = () => {
 	const slides = data?.data as Slider[];
 
 	if (!slides) {
-		return "Loading...";
+		return (
+			<div className="h-full w-full flex items-center justify-center">
+				<Spinner />
+			</div>
+		);
 	}
 
 	return (

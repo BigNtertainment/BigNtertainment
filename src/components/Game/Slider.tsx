@@ -23,13 +23,12 @@ const Slider = ({ images, className }: Props) => {
 				pauseOnHover={true}
 				indicators={true}>
 				{images.map((slide, index) => (
-					<div key={index} className="h-full ">
-						<div
-							className="h-full bg-cover mx-10 pl-5"
-							style={{
-								backgroundImage: `url(${slide})`,
-							}}></div>
-					</div>
+					<div
+						key={index}
+						className="h-full bg-cover"
+						style={{
+							backgroundImage: `url(${slide})`,
+						}}></div>
 				))}
 			</Slide>
 		</div>
