@@ -24,6 +24,8 @@ const Page = async () => {
 					<GameItem key={game.id} game={game} />
 				))}
 			</div>
+
+			{/* TODO: Add paginator component */}
 		</div>
 	);
 };

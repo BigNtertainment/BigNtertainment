@@ -6,11 +6,12 @@ import TimeToRead from "./TimeToRead";
 import Location from "./Location";
 import { cn } from "@/lib/utils/tailwind";
 import { Author } from "../../../../sanity/database/controller/post";
+import Heading from "@/components/shared/Heading";
 
 const Header = (post: {
 	title: string;
 	date: string;
-	className: string;
+	className?: string;
 	content: any;
 	author: Author;
 }) => {
@@ -19,7 +20,9 @@ const Header = (post: {
 	return (
 		<div className={cn("-mb-3", post.className)}>
 			<Location />
-			<h1 className="text-7xl font-bold my-4">{post.title}</h1>
+			<Heading size="4xl" className="block mx-0 my-3 text-left">
+				{post.title}
+			</Heading>
 			<div className="text-dark-highlight flex gap-6 blog-info">
 				<div>{date}</div>
 				<TimeToRead content={post.content} />

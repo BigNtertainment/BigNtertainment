@@ -11,11 +11,12 @@ export const metadata = {
 
 const Page = () => {
 	return (
-		<main className="col-[center-start/center-end]">
-			<Heading className="mt-20" size="xl">
+		<main className="col-[center-start/center-end] grid mt-12 mb-16">
+			<Heading className="mb-10" size="4xl">
 				Posts
 			</Heading>
 			<PostsList />
+			{/* TODO: Add paginator component */}
 		</main>
 	);
 };
