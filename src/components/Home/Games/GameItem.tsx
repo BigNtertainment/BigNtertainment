@@ -38,6 +38,9 @@ const GameItem = ({ game }: Props) => {
 				size="3xl">
 				{game.name}
 			</Heading>
+			<span className="absCenter z-40  mt-4 opacity-0">
+				<span className="underline">Oficial Website</span> &rarr;
+			</span>
 			<Image
 				src={game.cover}
 				fill={true}

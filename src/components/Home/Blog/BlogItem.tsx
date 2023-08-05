@@ -29,7 +29,7 @@ const StripeItem = ({ post }: { post: Post }) => {
 				/>
 			</div>
 			<div className="px-8 py-7 pt-10 col-[3/-1] border border-dark-highlight border-l-transparent rounded-r-3xl">
-				<Heading size="md" className="text-left mb-8">
+				<Heading size="lg" className="text-left mb-8 ">
 					{post.title}
 				</Heading>
 				<p className="text-2xl mb-5">{post.description}</p>

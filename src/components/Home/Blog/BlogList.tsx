@@ -29,7 +29,7 @@ const BlogList = ({ selectedCategory }: Props) => {
 	}
 
 	return (
-		<ul className="list-grid mt-20 col-[center-start/center-end]">
+		<ul className="list-grid mt-14 col-[center-start/center-end]">
 			{posts!.map((post) => (
 				<BlogItem key={post.slug} post={post} style="tile" />
 			))}
