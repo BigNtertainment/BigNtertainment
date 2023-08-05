@@ -9,7 +9,7 @@ const LayoutProvider = ({ children }: { children: React.ReactNode }) => {
 
 	if (pathname.startsWith("/studio")) {
 		return (
-			<html lang="en" className="html">
+			<html lang="en" className="html-studio">
 				<body>{children}</body>
 			</html>
 		);

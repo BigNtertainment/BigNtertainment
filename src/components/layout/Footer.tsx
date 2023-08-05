@@ -5,8 +5,8 @@ import Link from "next/link";
 const Footer = () => {
 	return (
 		<div className="grid gridLayout items-center justify-center col-[full-start/full-end] relative pb-12 lg:mx-4 footer">
-			<div className="col-[center-start/center-end] flex justify-center mt-6 lg:mt-14 mb-9  lg:mb-20">
-				<Logo width={100} height={100} className="opacity-50" />
+			<div className="col-[center-start/center-end] mx-auto flex justify-center mt-6 lg:mt-14 mb-9 h-16 w-16 relative lg:mb-20 lg:w-24 lg:h-24">
+				<Logo fill={true} className="opacity-50" />
 			</div>
 
 			<div className="flex uppercase justify-center mb-5 lg:mb-0 border-t-dark-line-highlight text-dark-secondary border-t row-[2/3] col-[center-start/center-end] pt-5 text-sm gap-4 lg:col-[center-start/col-start_4] lg:row-[2/3]">

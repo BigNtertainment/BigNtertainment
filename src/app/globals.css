@@ -32,10 +32,6 @@
 	box-sizing: inherit;
 }
 
-html {
-	box-sizing: border-box;
-}
-
 -webkit-scrollbar {
 	width: 10px;
 	background-color: #181818;
@@ -73,11 +69,20 @@ html {
 }
 
 @layer base {
+	html {
+		@apply box-border text-sm md:text-base;
+	}
+
+	.html-studio {
+		@apply text-base;
+	}
+
 	.body {
 		font-family: "Roboto", sans-serif;
 		font-weight: 300;
 		line-height: 1.6;
-		@apply text-dark-primary bg-dark-primary grid  grid-cols-defaultLayout min-h-screen;
+		@apply text-dark-primary bg-dark-primary grid gridLayout min-h-screen;
+
 		grid-template-rows: min-content 1fr min-content;
 	}
 
