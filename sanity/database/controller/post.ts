@@ -3,6 +3,7 @@ import { getAll, getOne } from "./factory";
 import { Badge } from "./badge";
 import { MarkdownBlock } from "@/types/TSanity";
 import { Comment } from "../../schemas/comment";
+import { AmountResponse } from "./games";
 
 export type Author = {
 	id: string;
@@ -32,6 +33,7 @@ export type PostQuery = {
 		badgeName: string,
 		params?: QueryParams
 	) => Promise<Post[] | null>;
+	getAmount: () => Promise<AmountResponse | null>;
 };
 
 export async function getAllPosts(this: any, params?: QueryParams) {
@@ -124,4 +126,10 @@ export async function getPostsByBadge(
   `;
 
 	return getAll.call(this, { query, params: { badgeName, ...params } });
+}
+
+export async function getPostsAmount(this: any) {
+	const query = groq`{"amount": count(*[_type == "post"])}`;
+
+	return getAll.call(this, { query });
 }

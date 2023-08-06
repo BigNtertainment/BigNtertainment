@@ -77,7 +77,7 @@ export async function getOneGame(this: any, slug: string) {
 	return getOne.call(this, { query, params: { slug } });
 }
 
-export async function getAmount(this: any) {
+export async function getGamesAmount(this: any) {
 	const query = groq`{"amount": count(*[_type == "game"])}`;
 
 	return getAll.call(this, { query });

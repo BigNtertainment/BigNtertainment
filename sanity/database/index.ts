@@ -8,13 +8,14 @@ import { BadgeQuery, getAllBadges, getOneBadge } from "./controller/badge";
 import {
 	GameQuery,
 	getAllGames,
-	getAmount,
+	getGamesAmount,
 	getOneGame,
 } from "./controller/games";
 import {
 	PostQuery,
 	getAllPosts,
 	getOnePost,
+	getPostsAmount,
 	getPostsByBadge,
 } from "./controller/post";
 import {
@@ -56,13 +57,14 @@ class SanityDatabase {
 		this.games = {
 			getAll: getAllGames.bind(this),
 			getOne: getOneGame.bind(this),
-			getAmount: getAmount.bind(this),
+			getAmount: getGamesAmount.bind(this),
 		};
 
 		this.posts = {
 			getAll: getAllPosts.bind(this),
 			getOne: getOnePost.bind(this),
 			getByBadge: getPostsByBadge.bind(this),
+			getAmount: getPostsAmount,
 		};
 
 		this.recommendedCategories = {
