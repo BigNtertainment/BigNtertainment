@@ -25,7 +25,7 @@ const BlogList = ({ selectedCategory }: Props) => {
 	}, [selectedCategory]);
 
 	if (posts?.length === 0) {
-		return <EmptyPage>No posts found.</EmptyPage>;
+		return <EmptyPage className="mt-10">No posts found.</EmptyPage>;
 	}
 
 	return (

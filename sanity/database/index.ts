@@ -24,6 +24,10 @@ import {
 } from "./controller/recomendedCategories";
 import { SliderQuery, getAllSlides } from "./controller/slider";
 import { PageQuery, getOnePage } from "./controller/page";
+import {
+	RecommendedGamesQuery,
+	getAllRecommendedGames,
+} from "./controller/recomendedGames";
 
 class SanityDatabase {
 	private client: SanityClient;
@@ -33,6 +37,7 @@ class SanityDatabase {
 	games: GameQuery;
 	posts: PostQuery;
 	recommendedCategories: RecommendedCategoryQuery;
+	recommendedGames: RecommendedGamesQuery;
 	slider: SliderQuery;
 	page: PageQuery;
 
@@ -69,6 +74,10 @@ class SanityDatabase {
 
 		this.recommendedCategories = {
 			getAll: getAllRecommendedCategories.bind(this),
+		};
+
+		this.recommendedGames = {
+			getAll: getAllRecommendedGames.bind(this),
 		};
 
 		this.slider = {
