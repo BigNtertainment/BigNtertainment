@@ -11,13 +11,18 @@ function getWindowDimensions() {
 }
 
 export default function useWindowDimensions() {
-	const [windowDimensions, setWindowDimensions] = useState(
-		getWindowDimensions()
-	);
+	const [windowDimensions, setWindowDimensions] = useState<{
+		width: number;
+		height: number;
+	}>();
 
 	const [breakPoint, setBreakPoint] = useState<
 		"sm" | "md" | "lg" | "xl" | "2xl"
 	>("xl");
+
+	useEffect(() => {
+		setWindowDimensions(getWindowDimensions());
+	}, []);
 
 	useEffect(() => {
 		function handleResize() {
@@ -29,6 +34,10 @@ export default function useWindowDimensions() {
 	}, []);
 
 	useEffect(() => {
+		if (!windowDimensions) {
+			return;
+		}
+
 		const { width } = windowDimensions;
 
 		if (width <= 768) {
@@ -46,7 +55,7 @@ export default function useWindowDimensions() {
 		if (width > 1280) {
 			setBreakPoint("2xl");
 		}
-	}, [windowDimensions.width]);
+	}, [windowDimensions?.width]);
 
 	return { ...windowDimensions, breakPoint };
 }
