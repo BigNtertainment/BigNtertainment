@@ -6,9 +6,13 @@ import {
 	validateMessage,
 	validateSubject,
 } from "@/lib/utils/mail/validate";
-import { sendFailResponse, sendSuccessResponse } from "@/lib/utils/response";
+import {
+	Response,
+	sendFailResponse,
+	sendSuccessResponse,
+} from "@/lib/utils/response";
 
-export const formAction = async (formData: FormData) => {
+export const formAction = async (formData: FormData): Promise<Response> => {
 	const email = formData.get("email")?.toString();
 	const subject = formData.get("subject")?.toString();
 	const message = formData.get("message")?.toString();
