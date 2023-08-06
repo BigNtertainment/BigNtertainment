@@ -3,16 +3,14 @@
 import { cn } from "@/lib/utils/tailwind";
 import { useState, useEffect } from "react";
 import NavLinks from "./NavLinks";
-import NavAuth from "./NavAuth";
+
 import { usePathname } from "next/navigation";
 
 const Nav = () => {
 	return (
 		<div className="fixed lg:hidden right-0 z-30 bg-dark-primary top-0 h-screen">
 			<div className="h-full w-full flex items-center justify-center">
-				<NavLinks className="flex-col gap-12 w-screen text-2xl">
-					<NavAuth childrenClassName="border-none underline" />
-				</NavLinks>
+				<NavLinks className="flex-col gap-12 w-screen text-2xl" />
 			</div>
 		</div>
 	);
