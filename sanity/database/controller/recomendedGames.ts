@@ -8,11 +8,11 @@ export type RecommendedGames = {
 };
 
 export type RecommendedGamesQuery = {
-	getAll: () => Promise<RecommendedGames[] | null>;
+	getAll: () => Promise<RecommendedGames | null>;
 };
 
 export async function getAllRecommendedGames(this: any) {
-	const query = groq`*[_type == "recommendedGames"]{
+	const query = groq`*[_type == "recommendedGames"][0]{
     games[]->{
       "id": _id,
       name,

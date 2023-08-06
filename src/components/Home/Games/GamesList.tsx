@@ -5,7 +5,8 @@ import GameItem from "./GameItem";
 const database = new SanityDatabase();
 
 const GamesList = async () => {
-	const games = await database.games.getAll({ limit: 6 });
+	const recommendedGames = await database.recommendedGames.getAll();
+	const games = recommendedGames?.games;
 
 	if (!games) {
 		return <EmptyPage>No games.</EmptyPage>;
