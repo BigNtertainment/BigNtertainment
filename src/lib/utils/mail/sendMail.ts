@@ -1,6 +1,7 @@
 import { mailOptions, transporter } from "./configTransporter";
+import { generateEmailContent } from "./generateContent";
 
-type MailData = {
+export type MailData = {
 	email: string;
 	subject: string;
 	message: string;
@@ -9,8 +10,7 @@ type MailData = {
 export const sendMail = async (data: MailData) => {
 	await transporter.sendMail({
 		...mailOptions,
+		...generateEmailContent(data),
 		subject: data.subject,
-		text: data.message,
-		html: "<h1>Test lmao</h1>",
 	});
 };
