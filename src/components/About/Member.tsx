@@ -9,7 +9,7 @@ type Props = {
 const MemberComponent = ({ member }: Props) => {
 	return (
 		<Link
-			href={`/team/${member.slug}`}
+			href={member.personalPageLink}
 			className="rounded-3xl bg-dark-line-highlight hover:-translate-y-1 transition hover:transition">
 			<div className="relative aspect-square rounded-t-3xl ">
 				<Image

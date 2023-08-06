@@ -11,7 +11,7 @@ const Authors = ({ author }: Props) => {
 		<Link
 			className="underline blog-author relative"
 			key={author.id}
-			href={`/team/${author.slug}`}>
+			href={author.personalPageLink}>
 			{author.name} {author.surname}
 		</Link>
 	);

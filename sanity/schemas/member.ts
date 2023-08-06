@@ -39,15 +39,6 @@ const memberSchema = {
 			title: "Personal Page Link",
 			type: "url",
 		},
-		{
-			name: "slug",
-			title: "Slug",
-			type: "slug",
-			options: {
-				source: (doc: any) => `${doc.name} ${doc.surname}`,
-				slugify: (input: string) => generateSlug(input),
-			},
-		},
 	],
 };
 

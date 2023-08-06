@@ -9,7 +9,7 @@ export type Author = {
 	name: string;
 	surname: string;
 	image: string;
-	slug: string;
+	personalPageLink: string;
 };
 
 export type Post = {
@@ -53,8 +53,8 @@ export async function getAllPosts(this: any, params?: QueryParams) {
       "id": _id,
       name,
       surname,
-      "slug": slug.current,
-      "image": image.asset->url
+      "image": image.asset->url,
+			personalPageLink
     },
   }`;
 
@@ -83,8 +83,8 @@ export async function getOnePost(this: any, slug: string) {
 			"id": _id,
 			name,
 			surname,
-			"slug": slug.current,
-			"image": image.asset->url
+			"image": image.asset->url,
+			personalPageLink
 		}
 	}`;
 
@@ -117,8 +117,8 @@ export async function getPostsByBadge(
         "id": _id,
         name,
         surname,
-        "slug": slug.current,
-        "image": image.asset->url
+        "image": image.asset->url,
+				personalPageLink
       }
     }
   `;
