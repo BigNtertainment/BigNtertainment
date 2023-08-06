@@ -9,7 +9,7 @@ import Paginator from "../shared/Pagination/Paginator";
 
 const database = new SanityDatabase();
 
-const elementsPerPage = 1;
+const elementsPerPage = 9;
 
 const GamesList = () => {
 	const [games, setGames] = useState<Game[] | null>(null);
@@ -37,7 +37,7 @@ const GamesList = () => {
 					<GameItem key={game.id} game={game} />
 				))}
 			</div>
-			<div className="mt-16 text-center flex justify-center">
+			<div className="mt-20 text-center flex justify-center">
 				<Paginator
 					elementsAmount={elementsAmount}
 					page={page}
