@@ -39,7 +39,15 @@ export const formAction = async (formData: FormData) => {
 		);
 	}
 
-	await sendMail();
+	try {
+		await sendMail({
+			email,
+			message,
+			subject,
+		});
+	} catch (error: any) {
+		return sendFailResponse(error.message);
+	}
 
 	return sendSuccessResponse("Email sent!");
 };
