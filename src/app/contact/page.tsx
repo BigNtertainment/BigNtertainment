@@ -20,7 +20,7 @@ const Page = () => {
 			<div className="mt-20 h-9 flex justify-center gap-4 items-center">
 				<Link
 					href="https://twitter.com/BigNtertainment"
-					className="h-6 aspect-square">
+					className="h-6 aspect-square hover:opacity-70 hover:transition transition">
 					<svg
 						viewBox="0 0 1200 1227"
 						xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ const Page = () => {
 				</Link>
 				<Link
 					href="https://github.com/BigNtertainment"
-					className="h-full aspect-square ">
+					className="h-full aspect-square hover:opacity-70 hover:transition transition">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 70 70"
