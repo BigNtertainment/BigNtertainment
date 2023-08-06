@@ -20,7 +20,9 @@ const GamesList = () => {
 		database.games
 			.getAmount()
 			.then((data) => setElementsAmount(data?.amount || 0));
+	}, []);
 
+	useEffect(() => {
 		database.games.getAll({ limit: elementsPerPage, page }).then((data) => {
 			setGames(data);
 		});

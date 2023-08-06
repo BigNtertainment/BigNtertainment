@@ -1,8 +1,5 @@
-import SanityDatabase from "../../../sanity/database";
 import Heading from "@/components/shared/Heading";
 import GamesList from "@/components/Game/GamesList";
-
-const database = new SanityDatabase();
 
 const Page = async () => {
 	return (
@@ -12,8 +9,6 @@ const Page = async () => {
 			</Heading>
 
 			<GamesList />
-
-			{/* TODO: Add paginator component */}
 		</div>
 	);
 };

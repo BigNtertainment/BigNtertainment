@@ -14,7 +14,7 @@ export async function getAll(
 ) {
 	const client = this.client as SanityClient;
 
-	const data = await client.fetch(query, params, options);
+	const data = await client?.fetch(query, params, options);
 
 	if (!data) {
 		return null;

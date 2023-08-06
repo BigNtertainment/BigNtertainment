@@ -4,6 +4,7 @@ import { Badge } from "./badge";
 import { MarkdownBlock } from "@/types/TSanity";
 import { Comment } from "../../schemas/comment";
 import { AmountResponse } from "./games";
+import { paginate } from "../../utils/dbUtils";
 
 export type Author = {
 	id: string;
@@ -37,7 +38,10 @@ export type PostQuery = {
 };
 
 export async function getAllPosts(this: any, params?: QueryParams) {
-	const query = groq`*[_type == "post"][0...${params?.limit || 10}]{
+	const query = groq`*[_type == "post"][${paginate({
+		limit: params?.limit,
+		page: params?.page,
+	})}]{
     "cover": cover.asset->url,
     title,
     "badges": badges[]->{

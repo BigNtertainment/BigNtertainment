@@ -64,7 +64,7 @@ class SanityDatabase {
 			getAll: getAllPosts.bind(this),
 			getOne: getOnePost.bind(this),
 			getByBadge: getPostsByBadge.bind(this),
-			getAmount: getPostsAmount,
+			getAmount: getPostsAmount.bind(this),
 		};
 
 		this.recommendedCategories = {
