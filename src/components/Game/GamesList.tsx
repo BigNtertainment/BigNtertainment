@@ -37,7 +37,7 @@ const GamesList = () => {
 					<GameItem key={game.id} game={game} />
 				))}
 			</div>
-			<div className="mt-14 text-center flex justify-center">
+			<div className="mt-16 text-center flex justify-center">
 				<Paginator
 					elementsAmount={elementsAmount}
 					page={page}
