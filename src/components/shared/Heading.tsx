@@ -28,7 +28,7 @@ const Heading = ({
 	return (
 		<h3
 			className={cn(
-				`font-bold text-center inline-block mx-auto transition text-${size} `,
+				`font-bold text-center inline-block mx-auto transition text-${size}`,
 				animated
 					? "hover:transition hover:skew-y-2 hover:skew-x-12 hover:scale-105"
 					: "",
