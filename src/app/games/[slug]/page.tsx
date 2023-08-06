@@ -6,6 +6,7 @@ import Heading from "@/components/shared/Heading";
 import Btn from "@/components/shared/LinkButton";
 import Slider from "@/components/Game/Slider";
 import MarkdownBlock from "@/components/shared/MarkdownBlock";
+import Location from "@/components/Game/Location";
 
 type Props = {
 	params: { slug: string };
@@ -22,7 +23,8 @@ const Page = async ({ params }: Props) => {
 
 	return (
 		<main className="grid col-[center-start/center-end] mt-16 lg:mt-24">
-			<section className="flex flex-col lg:flex-row justify-between gap-12 items-center">
+			<section className="flex flex-col lg:flex-row justify-between gap-12 items-center relative">
+				<Location />
 				<header className="flex flex-col ">
 					<Heading size="5xl" className="text-left mb-6 mx-0">
 						{game.name}
