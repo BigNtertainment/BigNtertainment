@@ -5,9 +5,11 @@ import GameItem from "../Home/Games/GameItem";
 import { useEffect, useState } from "react";
 import EmptyPage from "../shared/EmptyPage";
 import SanityDatabase from "../../../sanity/database";
-import Paginator from "../shared/Paginator";
+import Paginator from "../shared/Pagination/Paginator";
 
 const database = new SanityDatabase();
+
+const elementsPerPage = 1;
 
 const GamesList = () => {
 	const [games, setGames] = useState<Game[] | null>(null);
@@ -19,7 +21,7 @@ const GamesList = () => {
 			.getAmount()
 			.then((data) => setElementsAmount(data?.amount || 0));
 
-		database.games.getAll({ limit: 2, page }).then((data) => {
+		database.games.getAll({ limit: elementsPerPage, page }).then((data) => {
 			setGames(data);
 		});
 	}, [page]);
@@ -35,8 +37,13 @@ const GamesList = () => {
 					<GameItem key={game.id} game={game} />
 				))}
 			</div>
-			<div className="mt-10 text-center">
-				<Paginator elementsAmount={elementsAmount} page={page} setPage={setPage} />
+			<div className="mt-14 text-center flex justify-center">
+				<Paginator
+					elementsAmount={elementsAmount}
+					page={page}
+					setPage={setPage}
+					elementsPerPage={elementsPerPage}
+				/>
 			</div>
 		</>
 	);
