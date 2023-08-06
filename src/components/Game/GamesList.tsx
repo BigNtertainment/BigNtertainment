@@ -5,12 +5,13 @@ import GameItem from "../Home/Games/GameItem";
 import { useEffect, useState } from "react";
 import EmptyPage from "../shared/EmptyPage";
 import SanityDatabase from "../../../sanity/database";
+import Paginator from "../shared/Paginator";
 
 const database = new SanityDatabase();
 
 const GamesList = () => {
 	const [games, setGames] = useState<Game[] | null>(null);
-	const [page, setPages] = useState(1);
+	const [page, setPage] = useState(1);
 	const [elementsAmount, setElementsAmount] = useState(0);
 
 	useEffect(() => {
@@ -33,6 +34,9 @@ const GamesList = () => {
 				{games.map((game) => (
 					<GameItem key={game.id} game={game} />
 				))}
+			</div>
+			<div className="mt-10 text-center">
+				<Paginator elementsAmount={elementsAmount} page={page} setPage={setPage} />
 			</div>
 		</>
 	);
