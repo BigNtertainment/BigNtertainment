@@ -5,10 +5,7 @@ export const generateSlug = (input: string) => {
 };
 
 export const paginate = ({ limit = 10, page = 1 }) => {
-	const start = limit * page;
-	const end = limit * page + limit;
-
-	console.log(start, end);
-
+	const start = limit * (page - 1);
+	const end = limit * (page - 1) + limit;
 	return `${start}...${end}`;
 };

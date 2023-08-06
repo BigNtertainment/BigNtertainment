@@ -7,7 +7,11 @@ import Heading from "@/components/shared/Heading";
 const database = new SanityDatabase();
 
 const Page = async () => {
-	const games = await database.games.getAll({ limit: 10 });
+	const games = await database.games.getAll({ limit: 2 });
+
+	const amount = await database.games.getAmount();
+
+	console.log(amount);
 
 	if (!games) {
 		return <EmptyPage>No games found!</EmptyPage>;

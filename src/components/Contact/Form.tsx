@@ -83,7 +83,7 @@ const Form = ({ serverAction }: Props) => {
 			<button
 				disabled={isPending}
 				type="submit"
-				className=" py-2.5 px-4 text-sm border border-dark-neon-green text-dark-neon-green font-bold text-center self-center rounded-lg  sm:w-fit">
+				className="hover:-translate-y-0.5 hover:transition transition py-2.5 px-4 text-sm border border-dark-neon-green text-dark-neon-green font-bold text-center self-center rounded-lg  sm:w-fit">
 				{isPending ? (
 					<div className="scale-75">
 						<Spinner />{" "}
