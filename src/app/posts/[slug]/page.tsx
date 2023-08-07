@@ -2,7 +2,6 @@ import Content from "@/components/Posts/Post/Content";
 import SanityDatabase from "../../../../sanity/database";
 import Header from "@/components/Posts/Post/Header";
 import Baner from "@/components/Posts/Post/Baner";
-import PostMap from "@/components/Posts/Post/PostMap";
 import { notFound } from "next/navigation";
 import Badges from "@/components/Posts/Post/Badges";
 import Link from "next/link";
