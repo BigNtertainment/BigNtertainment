@@ -3,7 +3,7 @@ import SanityDatabase from "../../sanity/database";
 const database = new SanityDatabase();
 
 export default async function sitemap() {
-	const baseUrl = "https://big-ntertainment-nu.vercel.app/";
+	const baseUrl = "https://big-ntertainment-nu.vercel.app";
 
 	// Get All Posts
 	const posts = await database.posts.getAll();

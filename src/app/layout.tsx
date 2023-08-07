@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import LayoutProvider from "@/components/layout/LayoutProvider";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://big-ntertainment-nu.vercel.app/"),
+	metadataBase: new URL("https://big-ntertainment-nu.vercel.app"),
 	title: {
 		default: "BigNtertainment",
 		template: `%s | BigNtertainment`,
