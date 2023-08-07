@@ -6,12 +6,35 @@ import Heading from "@/components/shared/Heading";
 import Btn from "@/components/shared/LinkButton";
 import Slider from "@/components/Game/Slider";
 import MarkdownBlock from "@/components/shared/MarkdownBlock";
+import { Metadata } from "next";
 
 type Props = {
 	params: { slug: string };
 };
 
 const database = new SanityDatabase();
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const game = await database.games.getOne(params.slug);
+
+	if (!game) {
+		return {
+			title: "Not Found",
+			description: "The page yo are looking for does not exist.",
+		};
+	}
+
+	return {
+		title: game.name,
+		description: game.description,
+		alternates: {
+			canonical: `/games/${game.slug}`,
+			languages: {
+				"en-US": `/games/${game.slug}`,
+			},
+		},
+	};
+}
 
 const Page = async ({ params }: Props) => {
 	const game = await database.games.getOne(params.slug);
