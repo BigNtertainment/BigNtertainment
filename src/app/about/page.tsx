@@ -3,6 +3,8 @@ import Heading from "@/components/shared/Heading";
 import BlockContent from "@sanity/block-content-to-react";
 import SanityDatabase from "../../../sanity/database";
 
+export const revalidate = 60 * 10;
+
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 

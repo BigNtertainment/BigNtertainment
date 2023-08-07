@@ -1,7 +1,8 @@
 import Games from "@/components/Home/Games/Games";
 import Header from "@/components/Home/Header/Header";
 import Blog from "@/components/Home/Blog/Blog";
-import Reviews from "@/components/Home/Rewiews/Reviews";
+
+export const revalidate = 60 * 10;
 
 export default async function Home() {
 	return (
@@ -9,7 +10,6 @@ export default async function Home() {
 			<Header />
 			<Games />
 			<Blog />
-			{/* <Reviews /> */}
 		</main>
 	);
 }
