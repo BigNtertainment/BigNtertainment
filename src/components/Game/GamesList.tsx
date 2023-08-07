@@ -9,7 +9,7 @@ import Paginator from "../shared/Pagination/Paginator";
 
 const database = new SanityDatabase();
 
-const elementsPerPage = 9;
+const elementsPerPage = 6;
 
 const GamesList = () => {
 	const [games, setGames] = useState<Game[] | null>(null);

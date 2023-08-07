@@ -8,7 +8,7 @@ import EmptyPage from "../shared/EmptyPage";
 import Paginator from "../shared/Pagination/Paginator";
 
 const database = new SanityDatabase();
-const elementsPerPage = 9;
+const elementsPerPage = 6;
 
 const PostsList = () => {
 	const [posts, setPosts] = useState<Post[] | null>(null);

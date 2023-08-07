@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
 			allow: "/",
 			disallow: "/studio/",
 		},
-		sitemap: "",
+		sitemap: "https://big-ntertainment-nu.vercel.app/sitemap.xml",
 	};
 }
