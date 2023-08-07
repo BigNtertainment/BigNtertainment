@@ -8,7 +8,7 @@ import Slider from "@/components/Game/Slider";
 import MarkdownBlock from "@/components/shared/MarkdownBlock";
 import { Metadata } from "next";
 
-type Props = {
+export type Props = {
 	params: { slug: string };
 };
 
