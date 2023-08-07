@@ -57,7 +57,7 @@ const Slideshow = () => {
 										<MarkdownBlock markdown={slide.text} />
 										{slide.link && (
 											<Btn
-												className="mx-0 mt-0 -translate-y-32 self-start hover:-translate-y-32 no-underline text-lg"
+												className="mx-0 mt-0  bottom-10 self-start no-underline text-lg"
 												href={slide.link}>
 												{slide.linkCaption}
 											</Btn>
