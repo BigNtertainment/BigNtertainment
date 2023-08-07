@@ -27,7 +27,7 @@ const Post = async ({ params }: Props) => {
 				content={post.content}
 				author={post.author}
 			/>
-			<Baner src={post.cover} title={post.title} className="mt-8" />
+			<Baner src={post.cover} title={post.title} className="mt-8 mb-5" />
 			<Content blocks={post.content} />
 			<div className="flex  my-6 items-center justify-between">
 				<Badges badges={post.badges} />
