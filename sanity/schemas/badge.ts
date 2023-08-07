@@ -1,18 +1,5 @@
 export type BadgeColor = "red" | "green" | "violet" | "blue";
 
-export interface Badge {
-	_type: "badge";
-	name: string;
-	color: BadgeColor;
-}
-
-export interface SanityBadgeDocument {
-	_id: string;
-	_type: "badge";
-	name: string;
-	color: BadgeColor;
-}
-
 const badgeSchema = {
 	title: "Badge",
 	name: "badge",

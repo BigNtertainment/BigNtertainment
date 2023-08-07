@@ -2,7 +2,6 @@ import { QueryParams, groq } from "next-sanity";
 import { getAll, getOne } from "./factory";
 import { Badge } from "./badge";
 import { MarkdownBlock } from "@/types/TSanity";
-import { Comment } from "../../schemas/comment";
 import { AmountResponse } from "./games";
 import { paginate } from "../../utils/dbUtils";
 
@@ -21,8 +20,6 @@ export type Post = {
 	slug: string;
 	badges: Badge[];
 	content: MarkdownBlock;
-	likes: number;
-	comments: Comment[];
 	author: Author;
 	description: string;
 };
@@ -51,10 +48,8 @@ export async function getAllPosts(this: any, params?: QueryParams) {
     },
 		description,
     content,
-    likes,
     "slug": slug.current,
     publishedAt,
-    comments,
     "author": author->{
       "id": _id,
       name,
@@ -80,11 +75,9 @@ export async function getOnePost(this: any, slug: string) {
 			color
 		},
 		content,
-		likes,
 		description,
 		"slug": slug.current,
 		publishedAt,
-		comments,
 		"author": author->{
 			"id": _id,
 			name,
@@ -114,11 +107,9 @@ export async function getPostsByBadge(
         color
       },
       content,
-      likes,
 			description,
       "slug": slug.current,
       publishedAt,
-      comments,
       "author": author->{
         "id": _id,
         name,

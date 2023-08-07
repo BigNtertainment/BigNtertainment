@@ -24,12 +24,6 @@ const gameSchema = {
 			of: [{ type: "reference", to: { type: "badge" } }],
 		},
 		{
-			name: "likes",
-			title: "Likes",
-			type: "number",
-			initialValue: 0,
-		},
-		{
 			name: "publishedAt",
 			title: "Published At",
 			type: "datetime",

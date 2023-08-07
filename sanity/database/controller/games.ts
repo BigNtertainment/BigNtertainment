@@ -8,7 +8,6 @@ export type Game = {
 	id: string;
 	name: string;
 	badge: Badge;
-	likes: number;
 	description: string;
 	slug: string;
 	cover: string;
@@ -40,7 +39,6 @@ export async function getAllGames(this: any, params?: QueryParams) {
 			color,
 			name
 		},
-		likes,
 		description,
 		"slug": slug.current,
 		"cover": cover.asset->url,
@@ -64,7 +62,6 @@ export async function getOneGame(this: any, slug: string) {
 			color,
 			name
 		},
-		likes,
 		description,
 		"slug": slug.current,
 		"cover": cover.asset->url,

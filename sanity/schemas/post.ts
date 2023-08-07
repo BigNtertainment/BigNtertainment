@@ -78,18 +78,6 @@ const postSchema = {
 			],
 		},
 		{
-			name: "likes",
-			title: "Likes",
-			type: "number",
-			initialValue: 0,
-		},
-		{
-			name: "comments",
-			title: "Comments",
-			type: "array",
-			of: [{ type: "reference", to: { type: "comment" } }], // Use the previously defined commentSchema as an array of comments
-		},
-		{
 			name: "author",
 			title: "Author",
 			type: "reference",
