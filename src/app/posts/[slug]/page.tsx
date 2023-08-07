@@ -7,7 +7,7 @@ import Badges from "@/components/Posts/Post/Badges";
 import Link from "next/link";
 import { Metadata } from "next";
 
-type Props = {
+export type Props = {
 	params: { slug: string };
 };
 
