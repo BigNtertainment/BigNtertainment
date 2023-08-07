@@ -5,14 +5,37 @@ import Baner from "@/components/Posts/Post/Baner";
 import { notFound } from "next/navigation";
 import Badges from "@/components/Posts/Post/Badges";
 import Link from "next/link";
+import { Metadata } from "next";
 
 type Props = {
 	params: { slug: string };
 };
 
-const Post = async ({ params }: Props) => {
-	const database = new SanityDatabase();
+const database = new SanityDatabase();
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const post = await database.posts.getOne(params.slug);
+
+	if (!post) {
+		return {
+			title: "Not Found",
+			description: "The page yo are looking for does not exist.",
+		};
+	}
+
+	return {
+		title: post.title,
+		description: post.description,
+		alternates: {
+			canonical: `/posts/${post.slug}`,
+			languages: {
+				"en-US": `/posts/${post.slug}`,
+			},
+		},
+	};
+}
+
+const Post = async ({ params }: Props) => {
 	const post = await database.posts.getOne(params.slug);
 
 	if (!post) {

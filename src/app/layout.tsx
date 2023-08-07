@@ -3,11 +3,12 @@ import type { Metadata } from "next";
 import LayoutProvider from "@/components/layout/LayoutProvider";
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://big-ntertainment-nu.vercel.app/"),
 	title: {
 		default: "BigNtertainment",
 		template: `%s | BigNtertainment`,
 	},
-	description: "BigNtertainment Game Development website",
+	description: "BigNtertainment Game Development Official Website",
 };
 
 export default function RootLayout({
