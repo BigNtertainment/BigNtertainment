@@ -2,6 +2,7 @@ import TeamList from "@/components/About/TeamList";
 import Heading from "@/components/shared/Heading";
 import BlockContent from "@sanity/block-content-to-react";
 import SanityDatabase from "../../../sanity/database";
+import { Metadata } from "next";
 
 export const revalidate = 60 * 10;
 
@@ -9,6 +10,17 @@ const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 
 const database = new SanityDatabase();
+
+export const metadata: Metadata = {
+	title: "About",
+	description: "A page about our company",
+	alternates: {
+		canonical: `/about`,
+		languages: {
+			"en-US": `/about`,
+		},
+	},
+};
 
 const Page = async () => {
 	const page = await database.page.getOne("about");

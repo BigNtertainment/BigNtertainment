@@ -1,5 +1,17 @@
 import Heading from "@/components/shared/Heading";
 import GamesList from "@/components/Game/GamesList";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Games",
+	description: "A list of all our games",
+	alternates: {
+		canonical: `/games`,
+		languages: {
+			"en-US": `/games`,
+		},
+	},
+};
 
 const Page = async () => {
 	return (

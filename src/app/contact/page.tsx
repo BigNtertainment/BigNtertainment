@@ -2,6 +2,18 @@ import Heading from "@/components/shared/Heading";
 import Form from "@/components/Contact/Form";
 import { formAction } from "./action";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Contact",
+	description: "A contact page",
+	alternates: {
+		canonical: `/contact`,
+		languages: {
+			"en-US": `/contact`,
+		},
+	},
+};
 
 const Page = () => {
 	return (

@@ -1,14 +1,17 @@
 import PostsList from "@/components/Posts/PostsList";
 import Heading from "@/components/shared/Heading";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: "Posts",
-	description: "List of all posts",
+	description: "A list of our posts",
 	alternates: {
-		canonical: `${process.env.baseUrl}/posts`,
+		canonical: `/posts`,
+		languages: {
+			"en-US": `/posts`,
+		},
 	},
 };
-
 const Page = () => {
 	return (
 		<main className="col-[center-start/center-end] flex flex-col pb-10 lg:pb-20">
