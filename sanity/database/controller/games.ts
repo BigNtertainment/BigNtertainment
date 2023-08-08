@@ -13,6 +13,7 @@ export type Game = {
 	cover: string;
 	gameplay: string[];
 	updatedAt: string;
+	publishedAt: string;
 	gameLink: string;
 	content: MarkdownBlock;
 };
@@ -44,6 +45,7 @@ export async function getAllGames(this: any, params?: QueryParams) {
 		"cover": cover.asset->url,
 		"gameplay": gameplay[].asset->url,
 		"updatedAt": _updatedAt,
+		publishedAt,
      gameLink,
      content
 	}`;
@@ -67,6 +69,7 @@ export async function getOneGame(this: any, slug: string) {
 		"cover": cover.asset->url,
 		"gameplay": gameplay[].asset->url,
 		"updatedAt": _updatedAt,
+		publishedAt,
      gameLink,
      content
 	}`;

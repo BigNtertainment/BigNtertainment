@@ -34,7 +34,15 @@ const PostsList = () => {
 	return (
 		<>
 			<div className="list-grid">
-				{posts.map((post) => (
+				{posts.sort((post1, post2) => {
+					if (post1.publishedAt > post2.publishedAt) {
+						return -1;
+					} else if (post1.publishedAt < post2.publishedAt) {
+						return 1;
+					} else {
+						return 0;
+					}
+				}).map((post) => (
 					<BlogItem key={post.slug} style="tile" post={post} />
 				))}
 			</div>

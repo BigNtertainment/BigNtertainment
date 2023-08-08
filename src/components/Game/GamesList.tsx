@@ -35,7 +35,15 @@ const GamesList = () => {
 	return (
 		<>
 			<div className="list-grid ">
-				{games.map((game) => (
+				{games.sort((game1, game2) => {
+					if(game1.publishedAt > game2.publishedAt){
+						return -1;
+					} else if(game1.publishedAt < game2.publishedAt){
+						return 1;
+					} else {
+						return 0;
+					}
+				}).map((game) => (
 					<GameItem key={game.id} game={game} />
 				))}
 			</div>
