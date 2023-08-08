@@ -69,16 +69,16 @@ const TileItem = ({ post }: { post: Post }) => {
 					</div>
 					<div className="opacity-75 text-sm ">{date}</div>
 				</div>
-				<div className="text-2xl font-bold mb-3">{post.title}</div>
+				<div className="text-2xl font-bold leading-6 mb-4">{post.title}</div>
 			</div>
-			<div className="mx-5 opacity-80 -translate-y-1">{post.description}</div>
+			<div className="mx-5 opacity-80">{post.description}</div>
 			<div className=" mx-5 flex justify-between">
-				<div className="self-center flex gap-3">
+				<div className="self-center flex flex-wrap gap-x-3 gap-y-1">
 					{post.badges.map((badge) => (
 						<Badge key={badge.id} color={badge.color} name={badge.name} />
 					))}
 				</div>
-				<div className="self-center mb-3 text-left translate-y-1/4">
+				<div className="self-center mb-3 text-left whitespace-nowrap translate-y-1/4">
 					<span className="underline">Read More</span> &rarr;
 				</div>
 			</div>

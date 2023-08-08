@@ -12,7 +12,7 @@ type BadgeProps = {
 	color: BadgeColor;
 } & (LinkProps | React.HTMLAttributes<HTMLDivElement>);
 
-const baseClassNames = "rounded-full border px-3 py-0.5 no-underline";
+const baseClassNames = "rounded-full border px-3 py-0.5 no-underline whitespace-nowrap";
 
 const calculateColor = (color: BadgeColor): string => {
 	switch (color) {

@@ -34,7 +34,7 @@ const GameItem = ({ game }: Props) => {
 			href={`/games/${game.slug}`}
 			className="opacity-90 aspect-square w-full rounded-2xl relative transition hover:transition after:transition hover:after:transition after:rounded-xl overflow-hidden after:bg-black after:opacity-30 after:absolute after:w-full after:h-full after:top-0  hover:after:opacity-90 hover:after:bg-defaultGradient game-panel">
 			<Heading
-				className="z-40 absCenter transition px-4 py-3 opacity-0 w-full text-3xl"
+				className="z-40 absCenter transition px-4 py-3 opacity-0 w-full whitespace-nowrap text-3xl"
 				size="3xl">
 				{game.name}
 			</Heading>
