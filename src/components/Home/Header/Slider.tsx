@@ -53,7 +53,9 @@ const Slideshow = () => {
 									backgroundImage,
 								}}>
 								<div>
-									<div className="uppercase flex flex-col h-full flex-1 ml-14 py-10 prose  prose-invert prose-2xl break-words relative">
+									<div
+										className="uppercase flex flex-col h-full flex-1 ml-14 py-10 prose  prose-invert prose-2xl break-words relative"
+										id="markdown">
 										<MarkdownBlock markdown={slide.text} />
 										{slide.link && (
 											<Btn

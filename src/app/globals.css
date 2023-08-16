@@ -157,4 +157,12 @@
 	.game-panel:hover span {
 		@apply opacity-100 transition;
 	}
+
+	#markdown > div {
+		@apply !h-auto;
+	}
+
+	#markdown p {
+		@apply min-h-[30px];
+	}
 }
