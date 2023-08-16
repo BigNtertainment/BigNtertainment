@@ -56,6 +56,7 @@ module.exports = {
 					highlight: "#888",
 					"line-highlight": "#343434",
 					"neon-green": "#07f468",
+					loading: "#303030",
 				},
 				badge: {
 					blue: "#0074D9",

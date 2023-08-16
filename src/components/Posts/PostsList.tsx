@@ -6,6 +6,7 @@ import { Post } from "../../../sanity/database/controller/post";
 import BlogItem from "../Home/Blog/BlogItem";
 import EmptyPage from "../shared/EmptyPage";
 import Paginator from "../shared/Pagination/Paginator";
+import LoadingPost from "../shared/loading/Post";
 
 const database = new SanityDatabase();
 const elementsPerPage = 6;
@@ -13,6 +14,7 @@ const elementsPerPage = 6;
 const PostsList = () => {
 	const [posts, setPosts] = useState<Post[] | null>(null);
 	const [page, setPage] = useState(1);
+	const [isInProgress, setIsInProgress] = useState(true);
 	const [elementsAmount, setElementsAmount] = useState(0);
 
 	useEffect(() => {
@@ -22,10 +24,24 @@ const PostsList = () => {
 	}, []);
 
 	useEffect(() => {
-		database.posts
-			.getAll({ limit: elementsPerPage, page })
-			.then((data) => setPosts(data));
+		database.posts.getAll({ limit: elementsPerPage, page }).then((data) => {
+			setPosts(data);
+			setIsInProgress(false);
+		});
 	}, [page]);
+
+	if (isInProgress) {
+		return (
+			<div className="list-grid">
+				<LoadingPost />
+				<LoadingPost />
+				<LoadingPost />
+				<LoadingPost />
+				<LoadingPost />
+				<LoadingPost />
+			</div>
+		);
+	}
 
 	if (!posts) {
 		return <EmptyPage>No posts</EmptyPage>;
@@ -34,17 +50,19 @@ const PostsList = () => {
 	return (
 		<>
 			<div className="list-grid">
-				{posts.sort((post1, post2) => {
-					if (post1.publishedAt > post2.publishedAt) {
-						return -1;
-					} else if (post1.publishedAt < post2.publishedAt) {
-						return 1;
-					} else {
-						return 0;
-					}
-				}).map((post) => (
-					<BlogItem key={post.slug} style="tile" post={post} />
-				))}
+				{posts
+					.sort((post1, post2) => {
+						if (post1.publishedAt > post2.publishedAt) {
+							return -1;
+						} else if (post1.publishedAt < post2.publishedAt) {
+							return 1;
+						} else {
+							return 0;
+						}
+					})
+					.map((post) => (
+						<BlogItem key={post.slug} style="tile" post={post} />
+					))}
 			</div>
 			<div className="mt-20 text-center flex justify-center">
 				<Paginator
