@@ -20,7 +20,8 @@ const Page = () => {
 		<main className="col-[center-start/center-end] grid pt-10 pb-16 justify-center">
 			<Heading
 				size="4xl"
-				className="mb-4 tracking-tight font-extrabold text-center mx-auto">
+				className="mb-4 tracking-tight font-extrabold text-center mx-auto"
+				animated={true}>
 				Contact Us
 			</Heading>
 			<p className="mb-8 lg:mb-16 font-light text-center text-dark-secondary text-lg">

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const Page = () => {
 	return (
 		<main className="col-[center-start/center-end] flex flex-col pb-10 lg:pb-20">
-			<Heading className="mx-auto my-10" size="4xl">
+			<Heading className="mx-auto my-10" size="4xl" animated={true}>
 				Posts
 			</Heading>
 			<PostsList />
