@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import EmptyPage from "../shared/EmptyPage";
 import SanityDatabase from "../../../sanity/database";
 import Paginator from "../shared/Pagination/Paginator";
+import LoadingGame from "../shared/loading/Game";
 
 const database = new SanityDatabase();
 
@@ -15,6 +16,7 @@ const GamesList = () => {
 	const [games, setGames] = useState<Game[] | null>(null);
 	const [page, setPage] = useState(1);
 	const [elementsAmount, setElementsAmount] = useState(0);
+	const [isInProgress, setIsInProgress] = useState(true);
 
 	useEffect(() => {
 		database.games
@@ -25,8 +27,22 @@ const GamesList = () => {
 	useEffect(() => {
 		database.games.getAll({ limit: elementsPerPage, page }).then((data) => {
 			setGames(data);
+			setIsInProgress(false);
 		});
 	}, [page]);
+
+	if (isInProgress) {
+		return (
+			<div className="list-grid">
+				<LoadingGame />
+				<LoadingGame />
+				<LoadingGame />
+				<LoadingGame />
+				<LoadingGame />
+				<LoadingGame />
+			</div>
+		);
+	}
 
 	if (!games) {
 		return <EmptyPage>No games found!</EmptyPage>;
@@ -34,18 +50,20 @@ const GamesList = () => {
 
 	return (
 		<>
-			<div className="list-grid ">
-				{games.sort((game1, game2) => {
-					if(game1.publishedAt > game2.publishedAt){
-						return -1;
-					} else if(game1.publishedAt < game2.publishedAt){
-						return 1;
-					} else {
-						return 0;
-					}
-				}).map((game) => (
-					<GameItem key={game.id} game={game} />
-				))}
+			<div className="list-grid">
+				{games
+					.sort((game1, game2) => {
+						if (game1.publishedAt > game2.publishedAt) {
+							return -1;
+						} else if (game1.publishedAt < game2.publishedAt) {
+							return 1;
+						} else {
+							return 0;
+						}
+					})
+					.map((game) => (
+						<GameItem key={game.id} game={game} />
+					))}
 			</div>
 			<div className="mt-20 text-center flex justify-center">
 				<Paginator

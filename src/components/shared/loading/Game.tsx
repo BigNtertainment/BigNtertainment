@@ -4,7 +4,9 @@ const Game = () => {
 	return (
 		<div
 			role="status"
-			className="rounded-3xl  animate-pulse bg-dark-loading"></div>
+			className="rounded-3xl bg-dark-loading animate-pulse md:p-6 aspect-square">
+			<span className="sr-only">Loading...</span>
+		</div>
 	);
 };
 
