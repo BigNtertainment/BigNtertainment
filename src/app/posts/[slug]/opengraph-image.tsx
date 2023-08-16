@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/server";
-import { Props } from "./page";
+import { Props } from "./page1";
 import SanityDatabase from "../../../../sanity/database";
 
 export const alt = "BigNtertainment post";
