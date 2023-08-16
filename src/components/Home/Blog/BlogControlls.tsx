@@ -41,7 +41,7 @@ const BlogControlls = ({ selectedCategory, setSelectedCategory }: Props) => {
 
 	return (
 		<div className="col-[full-start/full-end] relative after:border-t-2 after:w-full after:absolute after:bottom-0 after:left-0 after:bg-dark-primary after:opacity-[0.08]">
-			<ul className="flex justify-center">
+			<ul className="flex justify-center flex-wrap">
 				{[DEFAULT_OPTION, ...options].map((game) => {
 					return (
 						<BlogOption
