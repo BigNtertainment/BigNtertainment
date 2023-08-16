@@ -32,7 +32,7 @@ export async function getAllGames(this: any, params?: QueryParams) {
 	const query = groq`*[_type == "game"][${paginate({
 		limit: params?.limit,
 		page: params?.page,
-	})}]{
+	})}] | order(publishedAt desc) {
 		"id": _id,
 		name,
 		"badges": badges[]->{

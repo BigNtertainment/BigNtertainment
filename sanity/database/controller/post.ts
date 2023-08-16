@@ -38,7 +38,7 @@ export async function getAllPosts(this: any, params?: QueryParams) {
 	const query = groq`*[_type == "post"][${paginate({
 		limit: params?.limit,
 		page: params?.page,
-	})}]{
+	})}] | order(publishedAt desc) {
     "cover": cover.asset->url,
     title,
     "badges": badges[]->{
@@ -98,7 +98,7 @@ export async function getPostsByBadge(
 	const query = groq`
     *[_type == "post" && $badgeName in badges[]->name][0...${
 					params?.limit || 10
-				}]{
+				}] | order(publishedAt desc) {
       "cover": cover.asset->url,
       title,
       "badges": badges[]->{

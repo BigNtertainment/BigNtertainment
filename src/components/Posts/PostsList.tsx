@@ -50,19 +50,9 @@ const PostsList = () => {
 	return (
 		<>
 			<div className="list-grid">
-				{posts
-					.sort((post1, post2) => {
-						if (post1.publishedAt > post2.publishedAt) {
-							return -1;
-						} else if (post1.publishedAt < post2.publishedAt) {
-							return 1;
-						} else {
-							return 0;
-						}
-					})
-					.map((post) => (
-						<BlogItem key={post.slug} style="tile" post={post} />
-					))}
+				{posts.map((post) => (
+					<BlogItem key={post.slug} style="tile" post={post} />
+				))}
 			</div>
 			<div className="mt-20 text-center flex justify-center">
 				<Paginator
