@@ -22,7 +22,9 @@ const Blog = () => {
 				setSelectedCategory={setSelectedCategory}
 			/>
 			<BlogList selectedCategory={selectedCategory} />
-			<Btn className="col-[center-start/center-end]" href="/posts">
+			<Btn
+				className="col-[center-start/center-end] whitespace-nowrap"
+				href="/posts">
 				Read More
 			</Btn>
 		</section>

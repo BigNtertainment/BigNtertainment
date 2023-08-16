@@ -10,7 +10,9 @@ const Games = () => {
 				Our Games
 			</Heading>
 			<GamesList />
-			<Button href="/games">See more</Button>
+			<Button href="/games" className="whitespace-nowrap">
+				See more
+			</Button>
 		</section>
 	);
 };
