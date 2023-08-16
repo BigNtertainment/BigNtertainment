@@ -11,7 +11,7 @@ const BlogOption = ({ children, isActive, onClick }: Props) => {
 
 	return (
 		<li
-			className={`select-none px-7 py-3.5 mb-0.5  relative cursor-pointer transition hover:bg-[rgb(47,47,47)] hover:bg-opacity-80 hover:transition ${
+			className={`select-none flex items-center text-center justify-center px-7 py-3.5 mb-0.5  relative cursor-pointer transition hover:bg-[rgb(47,47,47)] hover:bg-opacity-80 hover:transition ${
 				isActive ? activeStyle : ""
 			} blog-option`}
 			onClick={onClick}>
