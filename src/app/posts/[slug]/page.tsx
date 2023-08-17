@@ -52,7 +52,7 @@ const Post = async ({ params }: Props) => {
 			/>
 			<Baner src={post.cover} title={post.title} className="mt-8 mb-5" />
 			<Content blocks={post.content} />
-			<div className="flex  my-6 items-center justify-between">
+			<div className="flex  my-6 items-center justify-center flex-wrap md:justify-between">
 				<Badges badges={post.badges} />
 				<Link
 					href="/posts"

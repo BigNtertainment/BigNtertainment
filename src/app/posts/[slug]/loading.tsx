@@ -4,7 +4,7 @@ const Loading = () => {
 	return (
 		<div
 			role="status"
-			className="animate-pulse md:p-6 aspect-square col-[center-start/center-end]">
+			className="animate-pulse aspect-square col-[center-start/center-end] overflow-x-hidden overflow-y-hidden">
 			<div className="flex gap-2">
 				<div className="h-2 bg-dark-loading w-14 rounded-full"></div>
 				<div className="h-2 bg-dark-loading w-14 rounded-full"></div>

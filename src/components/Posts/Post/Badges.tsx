@@ -8,7 +8,7 @@ type Props = {
 
 const Badges = ({ badges }: Props) => {
 	return (
-		<div className="flex gap-5 flex-wrap">
+		<div className="flex gap-2 md:gap-5 flex-wrap">
 			{badges.map((badge) => (
 				<Badge
 					color={badge.color}
